@@ -1,3 +1,11 @@
+---
+title: 大模型 MoE 架构详解
+created: 2026-05-07
+updated: 2026-05-13
+tags: [AI, 大模型, MoE, 架构, DeepSeek, Mixtral]
+related: "[[LLM_Transformer_Architecture]], [[Self_Attention_Algorithm]]"
+---
+
 # 大模型 MoE 架构详解
 
 ## 一、什么是 MoE

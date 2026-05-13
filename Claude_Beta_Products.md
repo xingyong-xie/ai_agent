@@ -1,3 +1,11 @@
+---
+title: Anthropic Claude Beta 产品介绍
+created: 2025-04-10
+updated: 2026-05-13
+tags: [AI, Claude, Anthropic, Beta, 产品]
+related: "[[Claude_Design_Artifacts_Introduction]], [[Anthropic_Harness_Engineering_AI_Agent]]"
+---
+
 # Anthropic Claude Beta 产品介绍
 
 ## 一、概述

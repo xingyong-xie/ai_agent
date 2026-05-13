@@ -1,3 +1,11 @@
+---
+title: 大模型 Transformer 架构详解
+created: 2026-05-08
+updated: 2026-05-13
+tags: [AI, 大模型, Transformer, 架构, 注意力]
+related: "[[Self_Attention_Algorithm]], [[LLM_MoE_Architecture]]"
+---
+
 # 大模型 Transformer 架构详解
 
 ## 一、什么是 Transformer

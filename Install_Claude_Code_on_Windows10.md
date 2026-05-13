@@ -1,3 +1,11 @@
+---
+title: Windows 10 安装 Claude Code 完整指南
+created: 2025-04-10
+updated: 2026-05-13
+tags: [Claude, Claude-Code, 安装, Windows]
+related: "[[Claude_Beta_Products]]"
+---
+
 # Windows 10 安装 Claude Code 完整指南
 
 本文档介绍在 Windows 10 系统上安装 Claude Code 的完整步骤。

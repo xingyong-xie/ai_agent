@@ -1,3 +1,11 @@
+---
+title: OpenClaw 架构与设计详解
+created: 2025-04-10
+updated: 2026-05-13
+tags: [AI, 智能体, OpenClaw, 架构, 多平台, 网关]
+related: "[[Hermes_Agent_Architecture_Design]], [[AI_Agent_Development_Framework]]"
+---
+
 # OpenClaw 架构与设计详解
 
 ## 一、概述

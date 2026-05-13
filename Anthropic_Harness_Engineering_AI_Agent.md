@@ -1,3 +1,11 @@
+---
+title: Anthropic Harness Engineering 与 AI 智能体
+created: 2025-04-10
+updated: 2026-05-13
+tags: [AI, Anthropic, Harness, 工程框架, 智能体]
+related: "[[Claude_Beta_Products]], [[AI_Agent_Development_Framework]]"
+---
+
 # Anthropic Harness Engineering 与 AI 智能体
 
 ## 一、概念区分

@@ -1,3 +1,11 @@
+---
+title: AI智能体技能（Agent Skills）介绍
+created: 2025-04-10
+updated: 2026-05-13
+tags: [AI, 智能体, 技能, agentskills]
+related: "[[Agent_MCP_introduce]], [[README]]"
+---
+
 # AI智能体技能（Agent Skills）介绍
 ## 一、什么是AI智能体技能
 **Agent Skills** 是由 [agentskills.io](https://agentskills.io) 推出的**开放格式标准**，用于为AI智能体扩展新能力。通过可复用的指令、脚本和资源文件夹，让智能体获得领域专业知识、新功能和可重复的工作流程。

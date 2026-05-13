@@ -1,3 +1,11 @@
+---
+title: 自注意力算法（Self-Attention）详解
+created: 2026-05-08
+updated: 2026-05-13
+tags: [AI, 大模型, Transformer, 自注意力, 注意力机制]
+related: "[[LLM_Transformer_Architecture]], [[LLM_MoE_Architecture]]"
+---
+
 # 自注意力算法（Self-Attention）详解
 
 > 本文为 [大模型 Transformer 架构详解](LLM_Transformer_Architecture.md) 中自注意力部分的扩展文档。

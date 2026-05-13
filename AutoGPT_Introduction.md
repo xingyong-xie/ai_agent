@@ -1,3 +1,11 @@
+---
+title: AutoGPT 介绍及架构分析
+created: 2026-05-07
+updated: 2026-05-13
+tags: [AI, 智能体, AutoGPT, 架构, 平台]
+related: "[[AgentGPT_Introduction]], [[AI_Agent_Development_Framework]]"
+---
+
 # AutoGPT 介绍及架构分析
 
 ## 一、什么是 AutoGPT

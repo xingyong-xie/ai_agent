@@ -1,3 +1,11 @@
+---
+title: 智能体MCP（模型上下文协议）介绍
+created: 2025-04-10
+updated: 2026-05-13
+tags: [AI, MCP, 智能体, 协议, Anthropic]
+related: "[[AI_Agent_Development_Framework]], [[README]]"
+---
+
 # 智能体MCP（模型上下文协议）介绍
 ## 一、什么是MCP
 **MCP（Model Context Protocol，模型上下文协议）** 是由 Anthropic 推出的**开放协议标准**，用于标准化AI应用如何向大语言模型提供上下文和外部能力。MCP充当一个通用接口层，将AI模型与各种数据源、工具和服务连接起来。

@@ -1,3 +1,11 @@
+---
+title: AI智能体开发框架
+created: 2025-04-10
+updated: 2026-05-13
+tags: [AI, 智能体, 框架, LangChain, CrewAI, LlamaIndex]
+related: "[[README]], [[Agent_MCP_introduce]]"
+---
+
 # AI智能体开发框架
 
 > **注意**：开发框架是构建智能体的工具，本身不是智能体。

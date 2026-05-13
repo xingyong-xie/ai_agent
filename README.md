@@ -1,3 +1,11 @@
+---
+title: AI智能体介绍
+created: 2025-04-10
+updated: 2026-05-13
+tags: [AI, 智能体, 综述, 入门]
+related: "[[AI_Agent_Development_Framework]], [[Agent_MCP_introduce]], [[Agent_Skills_introduce]]"
+---
+
 # AI智能体介绍
 
 ## 一、什么是AI智能体

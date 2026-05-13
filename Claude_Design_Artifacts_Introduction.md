@@ -1,3 +1,11 @@
+---
+title: Claude Design（Artifacts Canvas）介绍
+created: 2025-04-10
+updated: 2026-05-13
+tags: [AI, Claude, Artifacts, 设计, 前端]
+related: "[[Claude_Beta_Products]], [[Anthropic_Harness_Engineering_AI_Agent]]"
+---
+
 # Claude Design（Artifacts Canvas）介绍
 
 ## 一、概述

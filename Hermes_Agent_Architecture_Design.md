@@ -1,3 +1,11 @@
+---
+title: Hermes Agent 架构与设计详解
+created: 2025-04-10
+updated: 2026-05-13
+tags: [AI, 智能体, Hermes, 架构, 自我改进]
+related: "[[OpenClaw_Architecture_Design]], [[AI_Agent_Development_Framework]]"
+---
+
 # Hermes Agent 架构与设计详解
 
 ## 一、概述
