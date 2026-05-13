@@ -1,7 +1,7 @@
 ---
 title: OpenClaw 架构与设计详解
 created: 2025-04-10
-updated: 2026-05-13
+updated: 2026-05-07
 tags: [AI, 智能体, OpenClaw, 架构, 多平台, 网关]
 related: "[[Hermes_Agent_Architecture_Design]], [[AI_Agent_Development_Framework]]"
 ---
@@ -758,7 +758,45 @@ openclaw config patch         # 部分更新配置
 
 ---
 
-## 十二、参考资源
+## 十二、与同类产品对比
+
+| 维度 | **OpenClaw** | **Botpress** | **n8n** | **LangChain** |
+|------|-------------|-------------|---------|---------------|
+| **定位** | 多平台 AI 助手网关 | 对话式 AI 平台 | 工作流自动化平台 | LLM 应用开发框架 |
+| **核心能力** | 消息路由 + 多智能体 | Bot 构建 + 部署 | 可视化工作流编排 | 链式调用 + Agent |
+| **多平台支持** | 10+ 消息平台 | Web、Messenger、WhatsApp | Webhook 集成 | 需自行开发 |
+| **本地优先** | 是，数据完全本地 | 云端为主 | 可自托管 | 需自行部署 |
+| **多智能体** | 原生支持，隔离工作空间 | 不支持 | 不支持 | 支持（LangGraph） |
+| **开放标准** | WebSocket + JSON-RPC + OpenAI API 兼容 | 专有 SDK | REST API | Python/TS SDK |
+| **技能系统** | Skills + Plugins 双层 | 模块化集成 | 节点式扩展 | 工具 + Chain |
+| **开源** | 完全开源 | 部分开源 | 公平源码许可 | 完全开源 |
+| **适用场景** | 个人/团队 AI 助手 | 客服 Bot | 业务流程自动化 | LLM 应用开发 |
+
+---
+
+## 十三、适用场景
+
+| 场景 | 说明 |
+|------|------|
+| **个人 AI 助手** | 通过 WhatsApp/Telegram 等常用平台与 AI 助手交互，统一管理个人事务 |
+| **企业自动化** | 多渠道客户服务、内部工作流自动化，支持多智能体分工 |
+| **隐私优先部署** | 数据完全存储在本地，满足数据不出域的安全合规要求 |
+| **开发者研究** | 开源透明架构，可自定义 Skills/Plugins 扩展，适合技术探索 |
+
+---
+
+## 十四、适用人群
+
+| 人群 | 说明 |
+|------|------|
+| **隐私关注者** | 本地优先架构，数据完全自主可控 |
+| **多平台用户** | 同时使用 WhatsApp/Telegram/Discord 等多个平台，希望统一 AI 入口 |
+| **开发者** | 开源架构，可自定义 Skills、Plugins、Channel Provider |
+| **企业用户** | 多智能体隔离、安全策略、沙箱执行，满足企业级需求 |
+
+---
+
+## 十五、参考资源
 
 - [OpenClaw 官网](https://openclaw.ai)
 - [OpenClaw 文档](https://docs.claw.so)

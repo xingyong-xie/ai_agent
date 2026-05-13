@@ -1,7 +1,7 @@
 ---
 title: Hermes Agent 架构与设计详解
 created: 2025-04-10
-updated: 2026-05-13
+updated: 2026-05-07
 tags: [AI, 智能体, Hermes, 架构, 自我改进]
 related: "[[OpenClaw_Architecture_Design]], [[AI_Agent_Development_Framework]]"
 ---
@@ -827,7 +827,66 @@ hermes claw migrate
 
 ---
 
-## 十五、参考资源
+## 十五、与同类产品对比
+
+| 维度 | **Hermes Agent** | **Claude Code** | **AutoGPT** | **OpenClaw** | **CrewAI** |
+|------|-----------------|-----------------|-------------|-------------|------------|
+| **学习循环** | Generator-Reflector-Curator 闭环 | 无 | 无 | 无 | 无 |
+| **多平台支持** | 15+ 消息平台 | 终端/IDE | Web | 10+ 消息平台 | 无（框架） |
+| **用户建模** | Honcho 对话式建模 | 无 | 无 | 无 | 无 |
+| **技能系统** | 自主创建 + 自我改进 | MCP 扩展 | 插件 | Skills + Plugins | 工具 |
+| **语音交互** | 支持（TTS + 语音通话） | 无 | 无 | 无 | 无 |
+| **Cron 定时** | 内置调度系统 | 无 | 无 | 内置 | 无 |
+| **开源** | MIT 完全开源 | 部分开源 | 开源 | 完全开源 | 开源 |
+| **GitHub Stars** | 95,000+ | 40,000+ | 175,000+ | 30,000+ | 25,000+ |
+
+---
+
+## 十六、快速安装
+
+```bash
+# 一键安装 Hermes Agent
+curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
+
+# 或使用 npm 安装
+npm install -g @nousresearch/hermes-agent
+
+# 首次运行（交互式设置）
+hermes setup
+
+# 启动 TUI
+hermes
+```
+
+---
+
+## 十七、支持的 LLM 提供商
+
+| 提供商 | 接入方式 | 说明 |
+|--------|----------|------|
+| **Nous Portal** | 内置 | Nous Research 官方模型门户 |
+| **OpenRouter** | API | 统一接入 100+ 模型，推荐默认 |
+| **OpenAI** | API | GPT-4o、GPT-4.1、o1 等 |
+| **Anthropic** | API | Claude Opus 4.6、Sonnet 4.6、Haiku 4.5 |
+| **xAI** | API | Grok 2、Grok 3 |
+| **Google** | API | Gemini 2.5 Pro、Flash |
+| **本地模型** | Ollama / vLLM | Llama、Mistral 等开源模型 |
+| **其他** | LiteLLM | 兼容 LiteLLM 支持的 100+ 提供商 |
+
+---
+
+## 十八、适用人群
+
+| 人群 | 说明 |
+|------|------|
+| **AI 研究者** | 闭环学习系统是独特研究素材，纯上下文学习无需微调 |
+| **多平台用户** | 15+ 消息平台统一接入，一个 Agent 覆盖所有渠道 |
+| **隐私关注者** | 本地优先，数据自主可控，支持本地模型 |
+| **自动化需求者** | 内置 Cron 调度 + 委托并行 + 语音交互，覆盖多种自动化场景 |
+
+---
+
+## 十九、参考资源
 
 - [Hermes Agent 官网](https://hermes-agent.nousresearch.com)
 - [Hermes Agent GitHub](https://github.com/NousResearch/hermes-agent)
