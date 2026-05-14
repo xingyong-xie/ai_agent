@@ -85,9 +85,11 @@ AI 训练与推理的硬件基础：
 
 ---
 
-## 八、其他 `games/`
+## 八、游戏框架 `Game/`
 
-- [[games/Unity_README]] — Unity 游戏引擎完整指南
+游戏引擎与开发框架知识库：
+
+- [[Game/Unity_README]] — Unity 游戏引擎完整指南
 
 ---
 
@@ -137,7 +139,7 @@ AI 训练与推理的硬件基础：
 | [[Obsidian_Introduction]] | `Tool/` | Obsidian | `#工具/Obsidian` |
 | [[Obsidian_Claude_Code_Workflow]] | `Tool/` | 工作流 | `#工具/Obsidian` |
 | [[GPU_price_202604]] | `Market/` | 显卡价格 | `#硬件/GPU` |
-| [[games/Unity_README]] | `games/` | Unity | `#游戏/Unity` |
+| [[Game/Unity_README]] | `Game/` | Unity | `#游戏/Unity` |
 
 ---
 
