@@ -17,7 +17,7 @@ related: "[[README]], [[Obsidian_Claude_Code_Workflow]]"
 
 入门必读，建立 AI 智能体的全局认知：
 
-- [[README]] — AI 智能体完整介绍（10 章综述：定义、流行智能体、模型层、工具层、技能、上下文、MCP、趋势、场景）
+- [[README]] — AI 智能体综述（定义、流行智能体、模型层/工具层/技能/上下文/MCP 概览 + 链接导航）
 
 ---
 
@@ -28,6 +28,8 @@ related: "[[README]], [[Obsidian_Claude_Code_Workflow]]"
 - [[AI_Agent_Development_Framework]] — 开发框架总览（LangChain / LlamaIndex / AutoGen / CrewAI / Deer-Flow）
 - [[Agent_MCP_introduce]] — 模型上下文协议（MCP 原理 / 工具集成 / 生态）
 - [[Agent_Skills_introduce]] — 智能体技能标准（agentskills.io / SKILL.md 格式）
+- [[Agent_Tool_Layer]] — 智能体工具层（Function Calling / 工具定义 / LangChain 工具开发 / 安全权限）
+- [[Agent_Context]] — 智能体上下文（Context Engineering / Context Mode / ACE / Context Hub）
 
 ---
 
@@ -35,14 +37,15 @@ related: "[[README]], [[Obsidian_Claude_Code_Workflow]]"
 
 从 Transformer 到 MoE，理解大模型底层原理：
 
-### Transformer 架构
+### 架构原理
 
 - [[LLM_Transformer_Architecture]] — Transformer 完整架构（组件/改进/模型对比/训练推理）
   - [[Self_Attention_Algorithm]] — 自注意力算法深度解析（QKV/因果掩码/复杂度/代码实现/9种变体）
-
-### MoE 架构
-
 - [[LLM_MoE_Architecture]] — MoE 稀疏激活架构（Router/Expert/共享专家/负载均衡/DeepSeek创新）
+
+### 模型层
+
+- [[LLM_Model_Layer]] — 智能体模型层（LLM 提供商 / 国内 Top 10 / LiteLLM / 模型路由 / 成本管理）
 
 ---
 
@@ -54,6 +57,7 @@ related: "[[README]], [[Obsidian_Claude_Code_Workflow]]"
 - [[AgentGPT_Introduction]] — AgentGPT Web 端智能体平台（Next.js + FastAPI/Plan-and-Solve/工具系统）
 - [[Hermes_Agent_Architecture_Design]] — Hermes 自我改进型智能体（闭环学习/15+平台/95K stars）
 - [[OpenClaw_Architecture_Design]] — OpenClaw 多平台 AI 助手网关（WhatsApp/Telegram/Discord）
+- [[Trae_Introduction]] — Trae AI 原生 IDE（字节跳动/双模式/SOLO Coder+Builder/Trae Agent CLI）
 
 ---
 
@@ -61,6 +65,7 @@ related: "[[README]], [[Obsidian_Claude_Code_Workflow]]"
 
 Anthropic Claude 系列产品与工程框架：
 
+- [[Claude_Code_Introduction]] — Claude Code CLI 编程智能体（核心能力/内置工具/IDE集成/Agent SDK）
 - [[Claude_Beta_Products]] — Claude Beta 产品（Cowork / Chrome / Excel / PowerPoint 智能体）
 - [[Claude_Design_Artifacts_Introduction]] — Claude Artifacts Canvas（前端设计/代码生成/实时预览）
 - [[Anthropic_Harness_Engineering_AI_Agent]] — Anthropic Harness 工程框架（评估/安全/部署）
@@ -104,11 +109,17 @@ AI 训练与推理的硬件基础：
   ↓
 进阶: [[LLM_MoE_Architecture]] → 了解最新 MoE 稀疏架构创新
   ↓
+模型: [[LLM_Model_Layer]] → 选择 LLM 提供商，掌握路由与成本管理
+  ↓
 框架: [[AI_Agent_Development_Framework]] → 学习智能体开发工具
+  ↓
+工具: [[Agent_Tool_Layer]] + [[Agent_Context]] → 掌握工具调用与上下文管理
   ↓
 协议: [[Agent_MCP_introduce]] + [[Agent_Skills_introduce]] → 掌握工具/技能集成标准
   ↓
 平台: [[AutoGPT_Introduction]] / [[OpenClaw_Architecture_Design]] → 了解主流智能体平台
+  ↓
+编程: [[Claude_Code_Introduction]] / [[Trae_Introduction]] → 选择编程智能体工具
   ↓
 生态: [[Claude_Beta_Products]] → 探索 Claude 产品生态
   ↓
@@ -125,13 +136,18 @@ AI 训练与推理的硬件基础：
 | [[AI_Agent_Development_Framework]] | `Framework/` | 开发框架 | `#AI/框架` |
 | [[Agent_MCP_introduce]] | `Framework/` | MCP 协议 | `#AI/协议` |
 | [[Agent_Skills_introduce]] | `Framework/` | 智能体技能 | `#AI/技能` |
+| [[Agent_Tool_Layer]] | `Framework/` | 工具层 | `#AI/工具层` |
+| [[Agent_Context]] | `Framework/` | 智能体上下文 | `#AI/上下文` |
 | [[LLM_Transformer_Architecture]] | `LLM/` | Transformer | `#AI/模型/Transformer` |
 | [[Self_Attention_Algorithm]] | `LLM/` | 自注意力 | `#AI/模型/注意力` |
 | [[LLM_MoE_Architecture]] | `LLM/` | MoE 架构 | `#AI/模型/MoE` |
+| [[LLM_Model_Layer]] | `LLM/` | 模型层 | `#AI/模型/提供商` |
 | [[AutoGPT_Introduction]] | `Agent/` | AutoGPT | `#AI/智能体/AutoGPT` |
 | [[AgentGPT_Introduction]] | `Agent/` | AgentGPT | `#AI/智能体/AgentGPT` |
 | [[Hermes_Agent_Architecture_Design]] | `Agent/` | Hermes | `#AI/智能体/Hermes` |
 | [[OpenClaw_Architecture_Design]] | `Agent/` | OpenClaw | `#AI/智能体/OpenClaw` |
+| [[Trae_Introduction]] | `Agent/` | Trae | `#AI/智能体/Trae` |
+| [[Claude_Code_Introduction]] | `Claude/` | Claude Code | `#AI/Claude/编程` |
 | [[Claude_Beta_Products]] | `Claude/` | Claude Beta | `#AI/Claude/产品` |
 | [[Claude_Design_Artifacts_Introduction]] | `Claude/` | Artifacts | `#AI/Claude/设计` |
 | [[Anthropic_Harness_Engineering_AI_Agent]] | `Claude/` | Harness | `#AI/Claude/工程` |
