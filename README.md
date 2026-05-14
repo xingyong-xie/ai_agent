@@ -73,11 +73,11 @@ AI智能体（AI Agent）是一个能够**感知环境、做出决策、执行�
 
 ### 企业级智能体
 
-| 智能体 | 厂商 | 特点 |
-|--------|------|------|
-| **Claude Agent** | Anthropic | 安全性和推理能力强，适合企业应用 |
-| **Google Gemini Agent** | Google | 结合Google生态优势 |
-| **Jina AI DocArray** | Jina AI | 文档处理和知识管理 |
+| 智能体                     | 厂商        | 特点               |
+| ----------------------- | --------- | ---------------- |
+| **Claude Agent**        | Anthropic | 安全性和推理能力强，适合企业应用 |
+| **Google Gemini Agent** | Google    | 结合Google生态优势     |
+| **Jina AI DocArray**    | Jina AI   | 文档处理和知识管理        |
 
 ### 编程开发类智能体详解
 
