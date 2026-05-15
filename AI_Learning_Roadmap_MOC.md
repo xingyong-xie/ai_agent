@@ -30,6 +30,7 @@ related: "[[README]], [[Obsidian_Claude_Code_Workflow]]"
 - [[Agent_Skills_introduce]] — 智能体技能标准（agentskills.io / SKILL.md 格式）
 - [[Agent_Tool_Layer]] — 智能体工具层（Function Calling / 工具定义 / LangChain 工具开发 / 安全权限）
 - [[Agent_Context]] — 智能体上下文（Context Engineering / Context Mode / ACE / Context Hub）
+- [[Vercel_Platform_Introduction]] — Vercel 云平台（AI SDK / AI Gateway / Fluid Compute / Next.js / 部署与定价）
 
 ---
 
@@ -138,6 +139,7 @@ AI 训练与推理的硬件基础：
 | [[Agent_Skills_introduce]] | `Framework/` | 智能体技能 | `#AI/技能` |
 | [[Agent_Tool_Layer]] | `Framework/` | 工具层 | `#AI/工具层` |
 | [[Agent_Context]] | `Framework/` | 智能体上下文 | `#AI/上下文` |
+| [[Vercel_Platform_Introduction]] | `Framework/` | Vercel 平台 | `#云平台/Vercel` |
 | [[LLM_Transformer_Architecture]] | `LLM/` | Transformer | `#AI/模型/Transformer` |
 | [[Self_Attention_Algorithm]] | `LLM/` | 自注意力 | `#AI/模型/注意力` |
 | [[LLM_MoE_Architecture]] | `LLM/` | MoE 架构 | `#AI/模型/MoE` |
