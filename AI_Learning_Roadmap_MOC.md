@@ -1,7 +1,7 @@
 ---
 title: AI 学习路线（MOC）
 created: 2026-05-13
-updated: 2026-05-18
+updated: 2026-05-19
 tags: [MOC, AI, 学习路线, 知识地图]
 related: "[[README]], [[Obsidian_Claude_Code_Workflow]]"
 ---
@@ -28,6 +28,7 @@ related: "[[README]], [[Obsidian_Claude_Code_Workflow]]"
 - [[AI_Agent_Development_Framework]] — 开发框架总览（LangChain / LlamaIndex / AutoGen / CrewAI / Deer-Flow）
 - [[Agent_MCP_introduce]] — 模型上下文协议（MCP 原理 / 工具集成 / 生态）
 - [[Agent_Skills_introduce]] — 智能体技能标准（agentskills.io / SKILL.md 格式）
+- [[Superpowers_Skill_Introduction]] — Superpowers 技能框架（TDD / 子智能体驱动开发 / 8+ 编程智能体兼容）
 - [[Agent_Tool_Layer]] — 智能体工具层（Function Calling / 工具定义 / LangChain 工具开发 / 安全权限）
 - [[Agent_Context]] — 智能体上下文（Context Engineering / Context Mode / ACE / Context Hub）
 - [[Zeabur_Platform_Introduction]] — Zeabur AI DevOps 平台（AI 智能体部署 / AI Hub / Wonder Mesh BYOH / MCP 集成）
@@ -141,6 +142,7 @@ AI 训练与推理的硬件基础：
 | [[Agent_Context]] | `Framework/` | 智能体上下文 | `#AI/上下文` |
 | [[Zeabur_Platform_Introduction]] | `Framework/` | Zeabur 平台 | `#云平台/Zeabur` |
 | [[PaaS_Platform_Comparison]] | `Framework/` | PaaS 对比 | `#云平台/PaaS` |
+| [[Superpowers_Skill_Introduction]] | `Framework/` | Superpowers | `#AI/技能/Superpowers` |
 | [[LLM_Transformer_Architecture]] | `LLM/` | Transformer | `#AI/模型/Transformer` |
 | [[Self_Attention_Algorithm]] | `LLM/` | 自注意力 | `#AI/模型/注意力` |
 | [[LLM_MoE_Architecture]] | `LLM/` | MoE 架构 | `#AI/模型/MoE` |
