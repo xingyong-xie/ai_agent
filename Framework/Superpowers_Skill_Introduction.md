@@ -22,12 +22,12 @@ related: "[[Agent_Skills_introduce]], [[Claude_Code_Introduction]], [[Agent_MCP_
 
 ### 核心理念
 
-| 原则 | 说明 |
-|------|------|
+| 原则              | 说明        |
+| --------------- | --------- |
 | **测试驱动开发（TDD）** | 先写测试，始终如此 |
-| **系统化优于即兴** | 流程优于猜测 |
-| **复杂度削减** | 简洁为首要目标 |
-| **证据优于断言** | 验证后再宣布成功 |
+| **系统化优于即兴**     | 流程优于猜测    |
+| **复杂度削减**       | 简洁为首要目标   |
+| **证据优于断言**      | 验证后再宣布成功  |
 
 ---
 
@@ -53,16 +53,16 @@ Superpowers 从你启动编程智能体的那一刻就开始工作：
 
 ### 3.1 七步核心流程
 
-| 步骤 | 技能 | 触发时机 | 说明 |
-|------|------|----------|------|
-| 1 | **brainstorming** | 写代码前 | 通过提问提炼想法，探索替代方案，分段展示设计，保存设计文档 |
-| 2 | **using-git-worktrees** | 设计批准后 | 创建隔离工作区（新分支），运行项目设置，验证测试基线 |
-| 3 | **writing-plans** | 设计批准后 | 将工作拆分为小任务（每个 2-5 分钟），含精确文件路径、完整代码、验证步骤 |
-| 4 | **subagent-driven-development** | 计划就绪后 | 每个任务派发独立子智能体，两阶段审查（规格合规 + 代码质量） |
-| 4' | **executing-plans** | 计划就绪后 | 批量执行，人工检查点 |
-| 5 | **test-driven-development** | 实现过程中 | 强制 RED-GREEN-REFACTOR：写失败测试 → 看它失败 → 写最小代码 → 看它通过 → 提交 |
-| 6 | **requesting-code-review** | 任务之间 | 对照计划审查，按严重度报告问题，关键问题阻止进度 |
-| 7 | **finishing-a-development-branch** | 任务完成 | 验证测试，提供选项（合并/PR/保留/丢弃），清理工作树 |
+| 步骤  | 技能                                 | 触发时机  | 说明                                                     |
+| --- | ---------------------------------- | ----- | ------------------------------------------------------ |
+| 1   | **brainstorming**                  | 写代码前  | 通过提问提炼想法，探索替代方案，分段展示设计，保存设计文档                          |
+| 2   | **using-git-worktrees**            | 设计批准后 | 创建隔离工作区（新分支），运行项目设置，验证测试基线                             |
+| 3   | **writing-plans**                  | 设计批准后 | 将工作拆分为小任务（每个 2-5 分钟），含精确文件路径、完整代码、验证步骤                 |
+| 4   | **subagent-driven-development**    | 计划就绪后 | 每个任务派发独立子智能体，两阶段审查（规格合规 + 代码质量）                        |
+| 4'  | **executing-plans**                | 计划就绪后 | 批量执行，人工检查点                                             |
+| 5   | **test-driven-development**        | 实现过程中 | 强制 RED-GREEN-REFACTOR：写失败测试 → 看它失败 → 写最小代码 → 看它通过 → 提交 |
+| 6   | **requesting-code-review**         | 任务之间  | 对照计划审查，按严重度报告问题，关键问题阻止进度                               |
+| 7   | **finishing-a-development-branch** | 任务完成  | 验证测试，提供选项（合并/PR/保留/丢弃），清理工作树                           |
 
 > 智能体在每个任务前**自动检查相关技能**。这些是强制工作流，而非建议。
 
@@ -151,24 +151,24 @@ COMMIT: 提交
 
 ### 4.3 协作类
 
-| 技能 | 说明 |
-|------|------|
-| **brainstorming** | 苏格拉底式设计提炼 |
-| **writing-plans** | 详细实施计划 |
-| **executing-plans** | 批量执行 + 人工检查点 |
-| **dispatching-parallel-agents** | 并发子智能体工作流 |
-| **requesting-code-review** | 审查前检查清单 |
-| **receiving-code-review** | 响应反馈 |
-| **using-git-worktrees** | 并行开发分支 |
-| **finishing-a-development-branch** | 合并/PR 决策工作流 |
-| **subagent-driven-development** | 快速迭代 + 两阶段审查（规格合规 → 代码质量） |
+| 技能                                 | 说明                        |
+| ---------------------------------- | ------------------------- |
+| **brainstorming**                  | 苏格拉底式设计提炼                 |
+| **writing-plans**                  | 详细实施计划                    |
+| **executing-plans**                | 批量执行 + 人工检查点              |
+| **dispatching-parallel-agents**    | 并发子智能体工作流                 |
+| **requesting-code-review**         | 审查前检查清单                   |
+| **receiving-code-review**          | 响应反馈                      |
+| **using-git-worktrees**            | 并行开发分支                    |
+| **finishing-a-development-branch** | 合并/PR 决策工作流               |
+| **subagent-driven-development**    | 快速迭代 + 两阶段审查（规格合规 → 代码质量） |
 
 ### 4.4 元技能
 
-| 技能 | 说明 |
-|------|------|
-| **writing-skills** | 按最佳实践创建新技能（含测试方法论） |
-| **using-superpowers** | 技能系统入门介绍 |
+| 技能                    | 说明                 |
+| --------------------- | ------------------ |
+| **writing-skills**    | 按最佳实践创建新技能（含测试方法论） |
+| **using-superpowers** | 技能系统入门介绍           |
 
 ---
 

@@ -29,14 +29,14 @@ related: "[[Zeabur_Platform_Introduction]], [[AI_Agent_Development_Framework]]"
 
 ### 2.1 计算模型
 
-| 维度 | **Vercel** | **Railway** | **Render** | **Fly.io** | **Heroku** | **Zeabur** |
-|------|-----------|-------------|-----------|-----------|-----------|-----------|
-| **计算类型** | Serverless + Edge + Fluid Compute | 容器（常驻/Serverless） | 容器（常驻/休眠） | Firecracker 微型 VM | Dyno 容器 | 容器（专属服务器/K8s） |
-| **冷启动** | Edge <1ms / Serverless 800ms-2.5s / Fluid 大幅减少 | Serverless 有冷启动 | 免费层 ~30s / 付费无 | 1-5s（自动停机后） | Eco ~10-20s / 付费无 | 无（专属服务器） |
-| **缩容到零** | 否（常驻） | 是（Serverless 模式） | 仅 Background Worker | 是（auto_stop_machines） | 仅 Eco 休眠 | 否（按月固定） |
-| **GPU 支持** | 否 | 否 | 是（A100/A10G） | 是（A100/L4） | 否 | 是 |
-| **最大超时** | 300s-800s | 无硬性限制 | 取决于计划 | 无硬性限制 | 30s-24h（按计划） | 无硬性限制 |
-| **运行时** | Node.js / Python / Go / Bun / Rust / Edge | 任意 Docker 镜像 | Node / Python / Go / Rust / Ruby / Java / PHP / Elixir | 任意 Docker 镜像 | Ruby / Node / Python / Java / PHP / Go / Scala / Clojure + Docker | 13+ 语言 + 任意 Docker |
+| 维度         | **Vercel**                                     | **Railway**       | **Render**                                             | **Fly.io**            | **Heroku**                                                        | **Zeabur**         |
+| ---------- | ---------------------------------------------- | ----------------- | ------------------------------------------------------ | --------------------- | ----------------------------------------------------------------- | ------------------ |
+| **计算类型**   | Serverless + Edge + Fluid Compute              | 容器（常驻/Serverless） | 容器（常驻/休眠）                                              | Firecracker 微型 VM     | Dyno 容器                                                           | 容器（专属服务器/K8s）      |
+| **冷启动**    | Edge <1ms / Serverless 800ms-2.5s / Fluid 大幅减少 | Serverless 有冷启动   | 免费层 ~30s / 付费无                                         | 1-5s（自动停机后）           | Eco ~10-20s / 付费无                                                 | 无（专属服务器）           |
+| **缩容到零**   | 否（常驻）                                          | 是（Serverless 模式）  | 仅 Background Worker                                    | 是（auto_stop_machines） | 仅 Eco 休眠                                                          | 否（按月固定）            |
+| **GPU 支持** | 否                                              | 否                 | 是（A100/A10G）                                           | 是（A100/L4）            | 否                                                                 | 是                  |
+| **最大超时**   | 300s-800s                                      | 无硬性限制             | 取决于计划                                                  | 无硬性限制                 | 30s-24h（按计划）                                                      | 无硬性限制              |
+| **运行时**    | Node.js / Python / Go / Bun / Rust / Edge      | 任意 Docker 镜像      | Node / Python / Go / Rust / Ruby / Java / PHP / Elixir | 任意 Docker 镜像          | Ruby / Node / Python / Java / PHP / Go / Scala / Clojure + Docker | 13+ 语言 + 任意 Docker |
 
 ### 2.2 部署与构建
 
