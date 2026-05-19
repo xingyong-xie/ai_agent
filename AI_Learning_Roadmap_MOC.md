@@ -1,7 +1,7 @@
 ---
 title: AI 学习路线（MOC）
 created: 2026-05-13
-updated: 2026-05-14
+updated: 2026-05-18
 tags: [MOC, AI, 学习路线, 知识地图]
 related: "[[README]], [[Obsidian_Claude_Code_Workflow]]"
 ---
@@ -31,6 +31,7 @@ related: "[[README]], [[Obsidian_Claude_Code_Workflow]]"
 - [[Agent_Tool_Layer]] — 智能体工具层（Function Calling / 工具定义 / LangChain 工具开发 / 安全权限）
 - [[Agent_Context]] — 智能体上下文（Context Engineering / Context Mode / ACE / Context Hub）
 - [[Zeabur_Platform_Introduction]] — Zeabur AI DevOps 平台（AI 智能体部署 / AI Hub / Wonder Mesh BYOH / MCP 集成）
+- [[PaaS_Platform_Comparison]] — PaaS 托管平台对比（Vercel / Railway / Render / Fly.io / Heroku / Zeabur 六平台全维度对比）
 ---
 
 ## 三、大模型核心架构 `LLM/`
@@ -139,6 +140,7 @@ AI 训练与推理的硬件基础：
 | [[Agent_Tool_Layer]] | `Framework/` | 工具层 | `#AI/工具层` |
 | [[Agent_Context]] | `Framework/` | 智能体上下文 | `#AI/上下文` |
 | [[Zeabur_Platform_Introduction]] | `Framework/` | Zeabur 平台 | `#云平台/Zeabur` |
+| [[PaaS_Platform_Comparison]] | `Framework/` | PaaS 对比 | `#云平台/PaaS` |
 | [[LLM_Transformer_Architecture]] | `LLM/` | Transformer | `#AI/模型/Transformer` |
 | [[Self_Attention_Algorithm]] | `LLM/` | 自注意力 | `#AI/模型/注意力` |
 | [[LLM_MoE_Architecture]] | `LLM/` | MoE 架构 | `#AI/模型/MoE` |
