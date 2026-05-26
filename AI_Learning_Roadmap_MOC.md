@@ -82,6 +82,7 @@ Anthropic Claude 系列产品与工程框架：
 - [[Obsidian_Introduction]] — Obsidian 本地知识管理工具（双向链接/图谱/插件生态/工作流）
 - [[Obsidian_Claude_Code_Workflow]] — Obsidian + Claude Code AI 驱动工作流（研究生成/拆分/批量更新/Git管理）
 - [[GStack_Introduction]] — GStack Claude Code 技能包（23 个专家角色 / Sprint 工作流 / 思考→规划→构建→审查→测试→发布→反思）
+- [[GCode_Programming_Introduction]] — G 代码编程入门（CNC 数控编程 / 手工编程 / CAM 自动生成 / Fusion 360 流程）
 
 ---
 
