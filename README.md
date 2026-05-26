@@ -118,6 +118,8 @@ AI智能体（AI Agent）是一个能够**感知环境、做出决策、执行�
 技能是智能体能力扩展的开放格式标准，通过可复用的指令+脚本+资源文件夹扩展能力。
 
 > 详见：[[Agent_Skills_introduce]] — agentskills.io 标准、SKILL.md 格式、112+ 技能分类、技能安装与创建
+>
+> 实战案例：[[GStack_Introduction]] — YC 总裁开源的 Claude Code 技能包，23 个专家角色 + Sprint 工作流
 
 ---
 

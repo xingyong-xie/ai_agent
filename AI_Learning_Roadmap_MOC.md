@@ -81,6 +81,7 @@ Anthropic Claude 系列产品与工程框架：
 
 - [[Obsidian_Introduction]] — Obsidian 本地知识管理工具（双向链接/图谱/插件生态/工作流）
 - [[Obsidian_Claude_Code_Workflow]] — Obsidian + Claude Code AI 驱动工作流（研究生成/拆分/批量更新/Git管理）
+- [[GStack_Introduction]] — GStack Claude Code 技能包（23 个专家角色 / Sprint 工作流 / 思考→规划→构建→审查→测试→发布→反思）
 
 ---
 
@@ -159,6 +160,7 @@ AI 训练与推理的硬件基础：
 | [[Install_Claude_Code_on_Windows10]] | `Claude/` | 安装指南 | `#AI/Claude/安装` |
 | [[Obsidian_Introduction]] | `Tool/` | Obsidian | `#工具/Obsidian` |
 | [[Obsidian_Claude_Code_Workflow]] | `Tool/` | 工作流 | `#工具/Obsidian` |
+| [[GStack_Introduction]] | `Tool/` | GStack | `#工具/GStack` |
 | [[GPU_price_202604]] | `Market/` | 显卡价格 | `#硬件/GPU` |
 | [[Game/Unity_README]] | `Game/` | Unity | `#游戏/Unity` |
 
