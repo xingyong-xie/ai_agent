@@ -1,7 +1,7 @@
 ---
 title: 阅读笔记索引（MOC）
 created: 2026-06-15
-updated: 2026-06-15
+updated: 2026-06-17
 tags: [MOC, 阅读, 读书笔记]
 related: "[[AI_Learning_Roadmap_MOC]]"
 ---
@@ -44,6 +44,7 @@ related: "[[AI_Learning_Roadmap_MOC]]"
 | [[自卑与超越-831446]] | 阿德勒 | WeRead导出 | |
 | [[大话西方艺术史]] | 意公子 | WeRead导出 | |
 | [[安·兰德的非虚构写作课]] | 安·兰德 | 全书总览 | ✅ 完成 |
+| [[卡尔·波普尔]] | 卡尔·波普尔 | 著作概览 | ✅ 完成 |
 
 ## 📐 文学批评与互文
 
@@ -62,4 +63,4 @@ related: "[[AI_Learning_Roadmap_MOC]]"
 
 ---
 
-*最后更新：2026-06-16*
+*最后更新：2026-06-17*
