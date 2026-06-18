@@ -1,7 +1,7 @@
 ---
 title: AI 学习路线（MOC）
 created: 2026-05-13
-updated: 2026-05-19
+updated: 2026-06-18
 tags: [MOC, AI, 学习路线, 知识地图]
 related: "[[README]], [[Obsidian_Claude_Code_Workflow]]"
 ---
@@ -61,6 +61,11 @@ related: "[[README]], [[Obsidian_Claude_Code_Workflow]]"
 - [[OpenClaw_Architecture_Design]] — OpenClaw 多平台 AI 助手网关（WhatsApp/Telegram/Discord）
 - [[Trae_Introduction]] — Trae AI 原生 IDE（字节跳动/双模式/SOLO Coder+Builder/Trae Agent CLI）
 
+### 深度阅读
+
+- [[Agent/AI_Agent_Deep_Dive]] — AI Agent 核心架构与能力层级（规划/工具/记忆/挑战/框架对比）
+- [[Agent/AIGC_Agent_Introduction]] — AIGC × Agent 自主内容生产（范式/工作流/自我迭代/多Agent协作）
+
 ---
 
 ## 五、Claude 生态 `Claude/`
@@ -75,7 +80,15 @@ Anthropic Claude 系列产品与工程框架：
 
 ---
 
-## 六、工具与工作流 `Tool/`
+## 六、AIGC 内容生成 `AIGC_Introduction.md`
+
+人工智能生成内容（AIGC）的知识入口，涵盖文本/图像/视频/音频/代码/3D 等多模态生成：
+
+- [[AIGC_Introduction]] — AIGC 总览（技术演进/生成模态/关键技术/应用场景/挑战与趋势）
+
+---
+
+## 七、工具与工作流 `Tool/`
 
 构建个人知识管理与 AI 驱动工作流：
 
@@ -86,7 +99,7 @@ Anthropic Claude 系列产品与工程框架：
 
 ---
 
-## 七、市场与硬件 `Market/`
+## 八、市场与硬件 `Market/`
 
 AI 训练与推理的硬件基础：
 
@@ -94,7 +107,7 @@ AI 训练与推理的硬件基础：
 
 ---
 
-## 八、游戏框架 `Game/`
+## 九、游戏框架 `Game/`
 
 游戏引擎与开发框架知识库：
 
@@ -122,6 +135,12 @@ AI 训练与推理的硬件基础：
 协议: [[Agent_MCP_introduce]] + [[Agent_Skills_introduce]] → 掌握工具/技能集成标准
   ↓
 平台: [[AutoGPT_Introduction]] / [[OpenClaw_Architecture_Design]] → 了解主流智能体平台
+  ↓
+深度: [[Agent/AI_Agent_Deep_Dive]] → 理解 Agent 核心架构与规划/工具/记忆三要素
+  ↓
+AIGC: [[AIGC_Introduction]] → 了解 AI 内容生成全貌
+  ↓
+结合: [[Agent/AIGC_Agent_Introduction]] → AIGC × Agent 自主内容生产
   ↓
 编程: [[Claude_Code_Introduction]] / [[Trae_Introduction]] → 选择编程智能体工具
   ↓
@@ -154,11 +173,14 @@ AI 训练与推理的硬件基础：
 | [[Hermes_Agent_Architecture_Design]] | `Agent/` | Hermes | `#AI/智能体/Hermes` |
 | [[OpenClaw_Architecture_Design]] | `Agent/` | OpenClaw | `#AI/智能体/OpenClaw` |
 | [[Trae_Introduction]] | `Agent/` | Trae | `#AI/智能体/Trae` |
+| [[Agent/AI_Agent_Deep_Dive]] | `Agent/` | Agent 深度 | `#AI/智能体/架构` |
+| [[Agent/AIGC_Agent_Introduction]] | `Agent/` | AIGC Agent | `#AI/AIGC/Agent` |
 | [[Claude_Code_Introduction]] | `Claude/` | Claude Code | `#AI/Claude/编程` |
 | [[Claude_Beta_Products]] | `Claude/` | Claude Beta | `#AI/Claude/产品` |
 | [[Claude_Design_Artifacts_Introduction]] | `Claude/` | Artifacts | `#AI/Claude/设计` |
 | [[Anthropic_Harness_Engineering_AI_Agent]] | `Claude/` | Harness | `#AI/Claude/工程` |
 | [[Install_Claude_Code_on_Windows10]] | `Claude/` | 安装指南 | `#AI/Claude/安装` |
+| [[AIGC_Introduction]] | `/` | AIGC 总览 | `#AI/AIGC` |
 | [[Obsidian_Introduction]] | `Tool/` | Obsidian | `#工具/Obsidian` |
 | [[Obsidian_Claude_Code_Workflow]] | `Tool/` | 工作流 | `#工具/Obsidian` |
 | [[GStack_Introduction]] | `Tool/` | GStack | `#工具/GStack` |
@@ -167,7 +189,7 @@ AI 训练与推理的硬件基础：
 
 ---
 
-## 六、阅读笔记 `Reading/`
+## 十、阅读笔记 `Reading/`
 
 个人读书笔记，涵盖中国文学、外国文学、人文社科：
 
