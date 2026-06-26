@@ -3,7 +3,7 @@ title: AIGC 介绍
 created: 2026-06-18
 updated: 2026-06-18
 tags: [AI, AIGC, 内容生成, 综述]
-related: "[[Agent/AIGC_Agent_Introduction]], [[Agent/AI_Agent_Deep_Dive]], [[README]]"
+related: "[[AI_Learning_Roadmap_MOC]], [[Agent/AIGC_Agent_Introduction]], [[Agent/AI_Agent_Deep_Dive]], [[README]]"
 ---
 
 # AIGC 介绍

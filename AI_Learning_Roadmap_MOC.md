@@ -80,7 +80,7 @@ Anthropic Claude 系列产品与工程框架：
 
 ---
 
-## 六、AIGC 内容生成 `AIGC_Introduction.md`
+## 六、AIGC 内容生成 `AIGC/`
 
 人工智能生成内容（AIGC）的知识入口，涵盖文本/图像/视频/音频/代码/3D 等多模态生成：
 
@@ -184,7 +184,7 @@ AIGC: [[AIGC_Introduction]] → 了解 AI 内容生成全貌
 | [[Claude_Design_Artifacts_Introduction]] | `Claude/` | Artifacts | `#AI/Claude/设计` |
 | [[Anthropic_Harness_Engineering_AI_Agent]] | `Claude/` | Harness | `#AI/Claude/工程` |
 | [[Install_Claude_Code_on_Windows10]] | `Claude/` | 安装指南 | `#AI/Claude/安装` |
-| [[AIGC_Introduction]] | `/` | AIGC 总览 | `#AI/AIGC` |
+| [[AIGC/AIGC_Introduction]] | `AIGC/` | AIGC 总览 | `#AI/AIGC` |
 | [[Obsidian_Introduction]] | `Tool/` | Obsidian | `#工具/Obsidian` |
 | [[Obsidian_Claude_Code_Workflow]] | `Tool/` | 工作流 | `#工具/Obsidian` |
 | [[GStack_Introduction]] | `Tool/` | GStack | `#工具/GStack` |
