@@ -3,6 +3,7 @@ title: Godot Engine 4 核心架构
 created: 2026-06-08
 updated: 2026-06-08
 tags: [游戏, Godot, 架构, 引擎核心]
+related: "[[AI_Learning_Roadmap_MOC]]"
 ---
 
 # Godot Engine 4 核心架构

@@ -3,6 +3,7 @@ title: Unity 场景与资源管理架构
 created: 2026-06-08
 updated: 2026-06-08
 tags: [游戏, Unity, 架构, 场景管理, 资源管理]
+related: "[[Unity_MOC]]"
 ---
 
 # Unity 场景与资源管理架构

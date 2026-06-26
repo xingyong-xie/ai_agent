@@ -3,6 +3,7 @@ title: Unity 性能优化架构
 created: 2026-06-08
 updated: 2026-06-08
 tags: [游戏, Unity, 架构, 性能优化]
+related: "[[Unity_MOC]]"
 ---
 
 # Unity 性能优化架构

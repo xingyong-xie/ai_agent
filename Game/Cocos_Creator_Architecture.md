@@ -3,6 +3,7 @@ title: Cocos Creator 3.x 核心架构
 created: 2026-06-08
 updated: 2026-06-08
 tags: [游戏, Cocos, 架构, 引擎核心]
+related: "[[AI_Learning_Roadmap_MOC]]"
 ---
 
 # Cocos Creator 3.x 核心架构

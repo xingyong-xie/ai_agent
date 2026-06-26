@@ -3,6 +3,7 @@ title: Unity C# 脚本架构与生命周期
 created: 2026-06-08
 updated: 2026-06-08
 tags: [游戏, Unity, 架构, C#, 脚本]
+related: "[[Unity_MOC]]"
 ---
 
 # Unity C# 脚本架构与生命周期

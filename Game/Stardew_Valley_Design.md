@@ -3,6 +3,7 @@ title: 星露谷物语·游戏设计分析
 created: 2026-06-26
 updated: 2026-06-26
 tags: [游戏, 游戏设计, 星露谷物语, 模拟经营, 独立游戏]
+related: "[[AI_Learning_Roadmap_MOC]]"
 ---
 
 # 星露谷物语·游戏设计分析

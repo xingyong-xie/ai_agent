@@ -3,6 +3,7 @@ title: Unity 光照与渲染架构
 created: 2026-06-08
 updated: 2026-06-08
 tags: [游戏, Unity, 架构, 光照系统, 渲染系统]
+related: "[[Unity_MOC]]"
 ---
 
 # Unity 光照与渲染架构

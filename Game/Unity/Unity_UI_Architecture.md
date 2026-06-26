@@ -3,6 +3,7 @@ title: Unity UI 系统架构
 created: 2026-06-08
 updated: 2026-06-08
 tags: [游戏, Unity, 架构, UI系统]
+related: "[[Unity_MOC]]"
 ---
 
 # Unity UI 系统架构

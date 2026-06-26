@@ -3,6 +3,7 @@ title: Unity 引擎核心架构概述
 created: 2026-06-08
 updated: 2026-06-08
 tags: [游戏, Unity, 架构, 引擎核心]
+related: "[[Unity_MOC]]"
 ---
 
 # Unity 引擎核心架构概述

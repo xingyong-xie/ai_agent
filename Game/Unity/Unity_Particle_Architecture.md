@@ -3,6 +3,7 @@ title: Unity 粒子系统架构
 created: 2026-06-08
 updated: 2026-06-08
 tags: [游戏, Unity, 架构, 粒子系统]
+related: "[[Unity_MOC]]"
 ---
 
 # Unity 粒子系统架构

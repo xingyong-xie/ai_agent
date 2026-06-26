@@ -3,6 +3,7 @@ title: Unity 物理系统架构
 created: 2026-06-08
 updated: 2026-06-08
 tags: [游戏, Unity, 架构, 物理系统]
+related: "[[Unity_MOC]]"
 ---
 
 # Unity 物理系统架构
