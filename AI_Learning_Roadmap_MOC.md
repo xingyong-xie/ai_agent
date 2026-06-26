@@ -194,10 +194,7 @@ AIGC: [[AIGC_Introduction]] → 了解 AI 内容生成全貌
 | [[Game/Cocos_Creator_Architecture]] | `Game/` | Cocos Creator | `#游戏/Cocos` |
 | [[Game/Godot_Engine_Architecture]] | `Game/` | Godot | `#游戏/Godot` |
 | [[Game/Stardew_Valley_Design]] | `Game/` | 星露谷物语 | `#游戏/游戏设计` |
-
----
-
-## 十、阅读笔记 `Reading/`
+| [[Agent/Loop_Engineering]] | `Agent/` | 智能体循环工程 | `#AI/智能体/Loop` |
 
 个人读书笔记，涵盖中国文学、外国文学、人文社科：
 
