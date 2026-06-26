@@ -3,7 +3,7 @@ title: GStack 插件详细说明
 created: 2026-05-25
 updated: 2026-05-25
 tags: [AI, 工具, Claude Code, GStack, 工作流]
-related: "[[Obsidian_Claude_Code_Workflow]], [[Claude]]"
+related: "[[Obsidian_Claude_Code_Workflow]], [[Claude_Code_Introduction]]"
 ---
 
 # GStack 插件详细说明
