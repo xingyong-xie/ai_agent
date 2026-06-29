@@ -28,6 +28,10 @@ related: "[[AI_Learning_Roadmap_MOC]]"
 | [[Unity_Lighting_Rendering_Architecture]] | 光照与渲染——光源类型、光照贴图、渲染路径、后处理 | ✅ |
 | [[Unity_Scene_Resource_Architecture]] | 场景与资源管理——Scene 加载、AssetBundle、Addressables、Resources | ✅ |
 | [[Unity_Performance_Optimization]] | 性能优化——Profiler、Draw Call、GC、LOD、遮挡剔除、内存管理 | ✅ |
+| [[Unity_Action_Combat_System]] | 3D RPG 动作战斗系统——输入缓冲、状态机、连招、命中判定、伤害系统、AI、打击感 | ✅ |
+| [[Unity_Open_World_Architecture]] | 开放世界地图技术方案——地形、流式加载、植被、LOD、NavMesh、天气、性能预算 | ✅ |
+| [[Unity_Save_Quest_System]] | 存档 / 任务系统架构——ISaveable、序列化、加密、版本迁移、EventBus、任务分支 | ✅ |
+| [[Unity_Art_Style_Unification]] | 美术风格统一实战——Art Bible、色板、光照、Shader、贴图、模型、UI、后处理 | ✅ |
 
 ---
 
@@ -56,8 +60,14 @@ Unity 引擎知识体系
     ├── 资源与场景
     │   └── [[Unity_Scene_Resource_Architecture]] (场景/AB/Addressables)
     │
-    └── 性能
-        └── [[Unity_Performance_Optimization]] (Profiler/DC/GC/LOD)
+    ├── 性能
+    │   └── [[Unity_Performance_Optimization]] (Profiler/DC/GC/LOD)
+    │
+    └── 实战专题
+        ├── [[Unity_Action_Combat_System]] (3D RPG 动作战斗系统)
+        ├── [[Unity_Open_World_Architecture]] (开放世界地图技术方案)
+        ├── [[Unity_Save_Quest_System]] (存档/任务系统架构)
+        └── [[Unity_Art_Style_Unification]] (美术风格统一实战)
 ```
 
 ---
