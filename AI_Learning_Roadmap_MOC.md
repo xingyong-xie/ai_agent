@@ -1,7 +1,7 @@
 ---
 title: AI 学习路线（MOC）
 created: 2026-05-13
-updated: 2026-06-18
+updated: 2026-07-06
 tags: [MOC, AI, 学习路线, 知识地图]
 related: "[[README]], [[Obsidian_Claude_Code_Workflow]]"
 ---
