@@ -1,7 +1,7 @@
 ---
 title: AI 学习路线（MOC）
 created: 2026-05-13
-updated: 2026-07-06
+updated: 2026-07-13
 tags: [MOC, AI, 学习路线, 知识地图]
 related: "[[README]], [[Obsidian_Claude_Code_Workflow]]"
 ---
@@ -107,18 +107,6 @@ AI 训练与推理的硬件基础：
 
 ---
 
-## 九、游戏框架 `Game/`
-
-游戏引擎与开发框架知识库：
-
-- [[Game/Unity/Unity_MOC]] — Unity 知识库（架构全览 + 笔记索引）
-- [[Game/Unreal_Engine_Architecture]] — Unreal Engine 5 核心架构
-- [[Game/Cocos_Creator_Architecture]] — Cocos Creator 架构
-- [[Game/Godot_Engine_Architecture]] — Godot 引擎架构
-- [[Game/Stardew_Valley_Design]] — 星露谷物语游戏设计分析
-
----
-
 ## 学习路径建议
 
 ```
@@ -189,11 +177,6 @@ AIGC: [[AIGC_Introduction]] → 了解 AI 内容生成全貌
 | [[Obsidian_Claude_Code_Workflow]] | `Tool/` | 工作流 | `#工具/Obsidian` |
 | [[GStack_Introduction]] | `Tool/` | GStack | `#工具/GStack` |
 | [[GPU_price_202604]] | `Market/` | 显卡价格 | `#硬件/GPU` |
-| [[Game/Unity/Unity_MOC]] | `Game/Unity/` | Unity 知识库（索引） | `#游戏/Unity` |
-| [[Game/Unreal_Engine_Architecture]] | `Game/` | Unreal Engine | `#游戏/Unreal` |
-| [[Game/Cocos_Creator_Architecture]] | `Game/` | Cocos Creator | `#游戏/Cocos` |
-| [[Game/Godot_Engine_Architecture]] | `Game/` | Godot | `#游戏/Godot` |
-| [[Game/Stardew_Valley_Design]] | `Game/` | 星露谷物语 | `#游戏/游戏设计` |
 | [[Agent/Loop_Engineering]] | `Agent/` | 智能体循环工程 | `#AI/智能体/Loop` |
 
 ---
