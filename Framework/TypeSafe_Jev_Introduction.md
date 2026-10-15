@@ -26,8 +26,8 @@ related: "[[LLM_Model_Layer]], [[AI_Agent_Development_Framework]], [[Agent_Conte
 | **命名来源** | Kahneman《思考，快与慢》的 **System 1**（直觉式快判断）+ 经济学家 Jevons 的杰文斯悖论 |
 | **核心作者** | Diogo Almeida（前 OpenAI，InstructGPT / RLHF 共同作者）；联合创始人 Erik Gafni（CTO）、Sasha Sheng（COO，前 Meta/FAIR） |
 | **训练方法** | **RLCD**（Reinforcement Learning for Calibrated Decisions） |
-| **模型 ID** | `jev-1.13.0`（供应商版本 ID） |
-| **别名** | `jev-latest`（SDK 默认）、`jev-preview` |
+| **模型 ID** | `jev-1.13`；响应中会返回**带日期的快照名**（如 `typesafe/jev-1.13-20260917`），属正常现象 |
+| **别名** | `~typesafe/jev-latest`（追踪最新版）；**阈值调优后建议固定版本号**，避免底层换版导致阈值失效 |
 | **主端点** | `api.typesafe.ai/v1/systemone` |
 | **定价** | **$0.042 / 百万输入 token**，**输出 token 免费** |
 | **延迟** | 约 70~500 ms |
@@ -55,7 +55,7 @@ related: "[[LLM_Model_Layer]], [[AI_Agent_Development_Framework]], [[Agent_Conte
 | 🟡 | **独立**：第三方分析、独立基准测试、学术预印本（非厂方） |
 | 🔴 | **宣称**：厂方宣传数字或社区二手转述，**未见独立复现** |
 
-> ⚠️ **本文自身的方法论限制**：撰写时原始页面未能直接打开（网络策略拦截），内容来自搜索引擎对官方文档、独立博客与社区仓库的**索引摘要**。因此所有 🟢 标记的条目，仍建议以官方文档原文为准再核对一遍。
+> ⚠️ **本文的溯源实况**：初稿撰写时原始页面无法直接打开（网络策略拦截），内容来自搜索引擎**索引摘要**。后续通过 `curl` 抓取 OpenRouter 官方文档的 markdown 原文，**第四、五节及原语定义已据一手文档重写并修正**（曾修正：模型 ID、`Noul` 拼写、base URL 与端点区别）。第一、七、八节中标注 🔴 的宣传数字**仍仅来自搜索摘要**，引用前请自行核对。
 
 ---
 
@@ -109,7 +109,7 @@ related: "[[LLM_Model_Layer]], [[AI_Agent_Development_Framework]], [[Agent_Conte
 
 ### 3.1 Noul — 是 / 否
 
-> 拼写说明：**多数来源写作 `Noul`**（据称是 *Bernoulli* 的变体拼写），部分来源写作 `Null`。本笔记统一用 **Noul**，实际调用时请以官方文档为准。🟡
+> 拼写说明：**官方文档确认拼写为 `Noul`**（据称源自 *Bernoulli* 的变体）。早期社区转述中有写作 `Null` 的，属误传——以官方为准。🟢
 
 | 项 | 说明 |
 |----|------|
@@ -187,28 +187,224 @@ related: "[[LLM_Model_Layer]], [[AI_Agent_Development_Framework]], [[Agent_Conte
 
 | 接入方式 | 说明 |
 |----------|------|
-| **官方端点** | `api.typesafe.ai/v1/systemone` 🟢 |
-| **OpenRouter** | 模型名 `typesafe/jev-1.13`；另有一套 Decisions API（`POST /api/alpha/decisions`） |
-| **Pydantic AI** | 一等公民集成，`TypeSafeModel` / `SystemOneModel`，模型串 `typesafe:jev-latest`；也可走 Pydantic AI Gateway |
-| **LangChain** | `langchain-typesafe` 包提供 Jev classifier |
-| **Vercel AI SDK** | TypeSafe provider 通过统一的 `evaluate` 接口调用（`experimental_evaluate`） |
-| **OpenClaw** | 有官方插件页（`docs.openclaw.ai/plugins/typesafe`）🟢 |
+| **OpenRouter** | 模型名 `typesafe/jev-1.13`，两套端点见 4.3 🟢 |
+| **TypeSafe 直连** | `api.typesafe.ai/v1/systemone` 🟡（未见一手文档确认） |
+| **Pydantic AI** | 一等公民集成，`TypeSafeModel` / `SystemOneModel`，模型串 `typesafe:jev-latest`；也可走 Pydantic AI Gateway 🟡 |
+| **LangChain** | `langchain-typesafe` 包提供 Jev classifier 🟡 |
+| **Vercel AI SDK** | TypeSafe provider 通过统一 `evaluate` 接口调用（`experimental_evaluate`）🟡 |
+| **OpenClaw** | 有插件页 `docs.openclaw.ai/plugins/typesafe` 🟡 |
 
-### 4.2 SDK
+### 4.2 SDK 安装
 
-| 语言 | 包名 |
+| 语言 | 包名 | 安装 | 已验证版本 |
+|------|------|------|-----------|
+| **TypeScript / JS** | `@typesafe-ai/sdk` | `npm install @typesafe-ai/sdk` | 0.7.0 |
+| **Python** | `typesafe-sdk`（导入名 `typesafe_sdk`） | `pip install typesafe-sdk` | 0.7.5 |
+| **Go** | 官方解码器（另有社区客户端 `kataras/jev`） | — | — |
+
+> ✅ **验证方式**：上表版本号是 2026-10-15 直接查询 **PyPI / npm registry 官方接口**得到的，不是搜索摘要转述。两个包均真实存在。
+>
+> 注意 Python 的**包名与导入名不一致**：装的是 `typesafe-sdk`，写的是 `from typesafe_sdk import ...`。这是常见踩坑点。
+
+### 4.3 认证与 Base URL
+
+| 环境变量 | 用途 |
+|----------|------|
+| `TYPESAFE_API_KEY` | API key（SDK 自动读取） |
+| `TYPESAFE_BASE_URL` | Base URL（走 OpenRouter 时设为 `https://openrouter.ai/api`） |
+
+| 端点 | 说明 |
 |------|------|
-| **TypeScript / JS** | `@typesafe-ai/sdk` |
-| **Python** | `typesafe_sdk` |
-| **Go** | 官方解码器（另有社区客户端 `kataras/jev`） |
+| `https://openrouter.ai/api/v1/systemone` | **System One API**——SDK 走的路径（SDK 会自动在 base URL 后拼 `/v1/systemone`） |
+| `https://openrouter.ai/api/alpha/decisions` | **Decisions API**——裸 HTTP 调用走的路径，带完整问题 schema |
+| `api.typesafe.ai/v1/systemone` | TypeSafe 官方直连端点 🟡（未见一手文档确认） |
 
-Decisions API 另有 TypeScript / Python / Go 三套 SDK。
+> ⚠️ 两个端点容易混淆。**SDK 用户**只需设 `baseURL`，路径由 SDK 拼接；**裸 HTTP 用户**请用 `/api/alpha/decisions`。
 
-### 4.3 计费模型
+### 4.4 示例一：TypeScript SDK
 
-- **输入**：$0.042 / 百万 token 🔴（厂方定价，多来源一致）
-- **输出**：**免费**——这不是促销，而是设计使然（输出长度本来就可忽略）
-- 实践含义：**把上下文塞进 state 是有成本的，多问几个问题几乎免费**
+```typescript
+import { TypeSafeClient } from '@typesafe-ai/sdk';
+
+const client = new TypeSafeClient({
+  apiKey: process.env.OPENROUTER_API_KEY,
+  baseURL: 'https://openrouter.ai/api',
+});
+
+const result = await client.systemOne({
+  model: 'jev-1.13',
+  state: 'I was charged twice for my subscription.',
+  questions: {
+    refund: { type: 'noul', instructions: 'Is the customer asking for money back?' },
+    department: {
+      type: 'choice',
+      instructions: 'Which team should handle this?',
+      criteria: { billing: 'Charges and refunds', technical: 'Bugs and outages' },
+    },
+  },
+});
+
+console.log(result.answers.refund); // { type: 'noul', noul: 0.98 }
+```
+
+**注意命名风格**：TypeScript 是 `client.systemOne()`（camelCase）。
+
+### 4.5 示例二：Python SDK
+
+```python
+import os
+from typesafe_sdk import TypeSafeClient
+
+client = TypeSafeClient(
+    api_key=os.environ["OPENROUTER_API_KEY"],
+    base_url="https://openrouter.ai/api",
+)
+
+result = client.system_one(          # ← snake_case
+    model="jev-1.13",
+    state="I was charged twice for my subscription.",
+    questions={
+        "refund": {"type": "noul", "instructions": "Is the customer asking for money back?"},
+        "department": {
+            "type": "choice",
+            "instructions": "Which team should handle this?",
+            "criteria": {"billing": "Charges and refunds", "technical": "Bugs and outages"},
+        },
+    },
+)
+
+print(result.answers["refund"])
+```
+
+**注意命名风格**：Python 是 `client.system_one()`（snake_case）。其余结构完全一致。
+
+### 4.6 示例三：裸 HTTP（不依赖 SDK）
+
+适合快速验证或非 TS/Python 语言：
+
+```bash
+curl https://openrouter.ai/api/alpha/decisions \
+  -H "Authorization: Bearer $OPENROUTER_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "typesafe/jev-1.13",
+    "state": {
+      "customer_tier": "enterprise",
+      "ticket": "My checkout page shows a blank screen after I click Pay."
+    },
+    "questions": {
+      "is_bug": {
+        "type": "noul",
+        "instructions": "Is the customer reporting a software defect?",
+        "criteria": {
+          "true": "The customer describes broken or unexpected product behavior.",
+          "false": "The customer is asking a question or requesting a feature."
+        }
+      },
+      "team": {
+        "type": "choice",
+        "instructions": "Which team should own this ticket?",
+        "criteria": {
+          "payments": "Checkout, billing, or payment processing issues.",
+          "frontend": "Rendering, layout, or browser compatibility issues.",
+          "account": "Login, permissions, or profile issues."
+        }
+      },
+      "urgency": {
+        "type": "score",
+        "instructions": "How urgent is this ticket?",
+        "criteria": [
+          "Can wait for the next release",
+          "Should be fixed this week",
+          "Blocking revenue right now"
+        ]
+      }
+    }
+  }'
+```
+
+### 4.7 响应结构逐字段解读
+
+下面是**官方文档中一次真实调用的返回**（同一次请求同时问三种原语）：
+
+```json
+{
+  "id": "gen-dec-1790015143-AIaTutprXsJ5EwohRSjb",
+  "model": "typesafe/jev-1.13-20260917",
+  "provider": "TypeSafe",
+  "answers": {
+    "is_bug": { "type": "noul", "noul": 0.96 },
+    "team": {
+      "type": "choice",
+      "choice": "payments",
+      "confidence": 0.67,
+      "probabilities": { "payments": 0.78, "frontend": 0.22, "account": 0 }
+    },
+    "urgency": {
+      "type": "score",
+      "score": 1.99,
+      "confidence": 0.99,
+      "probabilities": { "0": 0, "1": 0, "2": 1 },
+      "legend": {
+        "0": "Can wait for the next release",
+        "1": "Should be fixed this week",
+        "2": "Blocking revenue right now"
+      }
+    }
+  },
+  "usage": { "input_tokens": 476, "output_tokens": 70, "cost": 0.000019992 }
+}
+```
+
+| 字段 | 怎么读 |
+|------|--------|
+| `is_bug.noul` = 0.96 | "是"的概率。**接近 0.5 表示拿不准,不是表示"中等严重"** |
+| `team.choice` = `payments` | 概率最高的选项（argmax），直接可用 |
+| `team.probabilities` | 完整分布，**做阈值判断应该用它而不是只用 `choice`** |
+| `team.confidence` = 0.67 | 分布的**集中程度**，不是正确率 |
+| `urgency.score` = 1.99 | 加权位置，**小数是正常的**。索引 `0` 对应 criteria 数组第一项 |
+| `urgency.legend` | 索引 → 描述的映射，用来把数字翻译回人话 |
+| `model` 带 `-20260917` | 响应会返回**带日期的快照名**，属正常现象 |
+| `usage.cost` | 本次调用实际花费（USD） |
+
+> 💡 **最值得记的一条官方说明**：
+> *"Confidence describes the distribution of the alternatives, not whether the workflow is safe to run."*
+>
+> —— confidence 高**只说明选项之间区别明显**，不说明这个判断适合自动执行。阈值应该由**判断错误的代价**推导，而不是拍一个 0.8 这种整数。（这正是一、七两节反复强调的 **type-safe ≠ correct** 的官方版本表述。）
+
+### 4.8 示例四：从概率到决策（阈值分支）
+
+> 📝 下面这段是**我按官方推荐模式写的示意代码**，不是文档原文。真实阈值必须在**你自己领域的已标注数据**上调出来。
+
+```python
+# 先路由高置信度的，其余交人工
+team = result.answers["team"]
+
+# 阈值不是拍脑袋定的：按"误判代价"来设
+# 路由错了只是慢一点 → 阈值可以低；涉及退款/权限 → 阈值要高
+THRESHOLD = 0.75   # ← 必须用你自己的标注数据调
+
+if team.confidence >= THRESHOLD:
+    route_to(team.choice)
+else:
+    send_to_human(result)          # 拿不准就升级，不要硬选
+```
+
+级联模式（先便宜模型、不确定再升级到 LLM）见第六节 6.3。
+
+### 4.9 计费验证
+
+| 项 | 数值 |
+|----|------|
+| **输入** | $0.042 / 百万 token |
+| **输出** | **免费** |
+
+> ✅ **可以自己验算**：上面那次真实调用用了 476 input tokens，文档记录 `cost: 0.000019992`。
+> 476 × 0.042 ÷ 1,000,000 = **0.000019992** —— 完全吻合。
+>
+> 这比任何"便宜 444 倍"的宣传标语都可靠：**定价模型本身是可以独立验算的**。
+
+实践含义：**把上下文塞进 state 是有成本的，多问几个问题几乎免费**（输出不计费，且并行求值）。
 
 ---
 
@@ -282,6 +478,17 @@ Decisions API 另有 TypeScript / Python / Go 三套 SDK。
 - 有基准报告称该模式下达到前沿模型准确率而成本仅 ~26~28% 🔴
 - 安全性提醒：**控制点应放在模型之外**（AI 网关层），而不是指望模型自己抗注入
 
+**官方 cookbook 里的现成模式** 🟢：
+
+| 模式 | 用途 |
+|------|------|
+| **Gate Agent Tool Calls** | 批准 / 阻止 / 升级 agent 的工具调用 |
+| **Jev-Verified Cascade** | 便宜模型的答案先用 Jev 验证，不过关再升级 |
+| **Auto-Approve Permission Prompts** | 用 Noul 阈值自动应答 Claude Code / Codex / Cursor 的权限弹窗 |
+| **Classify and Tag at Scale** | 批量打标签，阈值从已标注数据中选 |
+
+> 其中"自动应答权限弹窗"这个用法特别值得注意——**它把决策模型放在了 agent 的安全关键路径上**，正好呼应 7.1 的 type-safe ≠ correct：阈值设错，等于把权限判断交给一个只会说"格式合法"的组件。
+
 ---
 
 ## 七、已知陷阱
@@ -309,7 +516,9 @@ Jev 可以返回一个**格式完全合法、类型完全正确、但内容错�
 
 两者都可能表现为"概率 ≈ 0.5"，但**处理方式截然不同**（前者要人工裁决，后者要补充信息）。这是类型化评估模型的**结构性**局限，不是调参能解决的。
 
-### 7.3 厂方自述的已知弱点 🟢
+### 7.3 厂方自述的已知弱点 🟡
+
+> 本节内容来自**第三方文章转述 TypeSafe 官方的局限清单**，我未在官方一手文档中逐条核对，故标 🟡 而非 🟢。
 
 TypeSafe 官方公布了 Jev 1.13 的一系列"锯齿边缘"：
 
