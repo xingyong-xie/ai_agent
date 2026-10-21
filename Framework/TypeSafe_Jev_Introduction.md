@@ -16,7 +16,7 @@ related: "[[LLM_Model_Layer]], [[AI_Agent_Development_Framework]], [[Agent_Conte
 
 ## 一、概述
 
-**Jev** 是 TypeSafe AI 于 **2026-09-15** 发布的模型，也是首个公开的 **System One Model**（决策模型 / Decision Model）。它不做对话、不写代码、不给推理过程，只做**判断**。
+**Jev** 是 TypeSafe AI 于 **2026-09-15** 发布的模型，也是首个以 **System One Model**（决策模型 / Decision Model）名义公开推广的模型。它不做对话、不写代码、不给推理过程，只做**判断**。
 
 | 属性 | 说明 |
 |------|------|
@@ -146,12 +146,13 @@ related: "[[LLM_Model_Layer]], [[AI_Agent_Development_Framework]], [[Agent_Conte
 
 ### 3.3 Score — 打几分
 
-| 项 | 说明 |
-|----|------|
-| **用途** | 在**有序**量表上定位（严重度、紧急度、情绪强度、质量分） |
-| **criteria** | **有序数组**，2~10 级，从低到高 |
-| **返回** | `score`（概率加权均值，**可能是小数**）+ `legend` + `probabilities` + `confidence` |
-| **建议** | 每一级写成**具体情境**，而不是写"高/中/低"这种程度词 |
+| 项            | 说明                                                                   |
+| ------------ | -------------------------------------------------------------------- |
+| **用途**       | 在**有序**量表上定位（严重度、紧急度、情绪强度、质量分）                                       |
+| **criteria** | **有序数组**，2~10 级，从低到高                                                 |
+| **返回**       | `score`（概率加权均值，**可能是小数**）+ `legend` + `probabilities` + `confidence` |
+| **建议**       | 每一级写成**具体情境**，而不是写"高/中/低"这种程度词                                       |
+|              |                                                                      |
 
 ### 3.4 Box — 定位图片中的目标（实验特性）
 
@@ -1586,6 +1587,7 @@ const model = typeSafeAi.decisionModel('jev-latest');
 
 // 跨厂商的决策模型走同一套接口：
 // openai.decisionModel('gpt-6-luna')
+// perplexity.decisionModel('pplx-decider-latest')
 // anthropic.decisionModel('claude-haiku-4-5-20251001')
 // google.decisionModel('gemini-3.5-flash-lite')
 ```
@@ -1599,9 +1601,9 @@ const model = typeSafeAi.decisionModel('jev-latest');
 | 图像输入 | 实验支持（需危险区请求头） | state 部件只有 `text` / `json` / `file`，且 TypeSafe 通路只吃 **text 与 JSON** |
 | 接口名 | — | **`experimental_decide`**（旧名已弃用） |
 
-**跨厂商是它的独特价值**：同一套代码可以换成 `openai.decisionModel(...)`。但要清楚**能力并不对等**——只有 **Jev 和 OpenAI 的 Decisions API 返回原生概率分布**；Anthropic / Google 的 Boolean 答案官方说明是 *"prompted estimates of P(true)"*（由提示词诱导的估计），而它们的 Choice / Score **干脆不返回分布**。
+**跨厂商是它的独特价值**，但**统一接口不等于能力等价**。截至 2026-10-21，AI SDK 官方文档列出的原生决策 provider 包括 TypeSafe（Jev）、OpenAI（Decisions API）和 Perplexity（`pplx-decider-latest`）；它们对 Choice / Score 返回原生概率分布，Boolean 返回 yes 概率。Anthropic / Google 则是**结构化语言模型适配器**：Boolean 答案是 *"prompted estimates of P(true)"*，Choice / Score **不返回分布**。
 
-> 📌 **实践含义**：如果 10.3 那套校准度量是你的核心诉求，那**只有走 Jev 或 OpenAI 的前端才有完整数据**；换到别的 provider，`probabilities` 就没了，10.4 的阈值也就无从谈起。
+> 📌 **实践含义**：如果 10.3 那套校准度量是你的核心诉求，先确认 provider 是否真的返回 `probabilities`。换到 Anthropic / Google 适配器时，只能得到模型生成的标签或提示词估计，10.4 的阈值调优失去原来的统计基础。市场同类模型的完整对照见第十三节。
 
 还可以用 `createProviderRegistry` / `customProvider({decisionModels, fallbackProvider})` 注册，ID 写成 `providerId:modelId`；只写模型名的裸串（如 `'typesafe-ai/jev'`）会走 **Vercel AI Gateway**，需要 `AI_GATEWAY_API_KEY`。
 
@@ -1616,7 +1618,7 @@ const model = typeSafeAi.decisionModel('jev-latest');
 | **跨厂商可替换**，或已经在 Vercel AI SDK 生态里 | **Vercel AI SDK** |
 | 要用**图片 / Box**，或要最完整的原生字段 | **官方 SDK / 裸 HTTP**（4.4–4.6） |
 
-> ✅ **怎么核对这几段**：Pydantic AI 段落取自 `pydantic.dev` 官方文档；LangChain 段落取自 PyPI 上 `langchain-typesafe` 的发行版 README；AI SDK 段落取自 `ai-sdk.dev` 的决策模型页。版本号用**包元数据接口**核对（`langchain-typesafe` = `0.0.1a3`），不是搜索摘要。**但这些包都很新，请以你实际安装到的那一版文档为准。**
+> ✅ **怎么核对这几段**：Pydantic AI 段落取自 `pydantic.dev` 官方文档；LangChain 段落取自 PyPI 上 `langchain-typesafe` 的发行版 README；AI SDK 段落取自 `ai-sdk.dev/docs/ai-sdk-core/decisions`。版本号用**包元数据接口**核对（`langchain-typesafe` = `0.0.1a3`），不是搜索摘要。**但这些包都很新，请以你实际安装到的那一版文档为准。**
 
 ---
 
@@ -1823,9 +1825,123 @@ def shadow_eval(labelled_rows, client):
 
 ---
 
-## 十三、延伸
+## 十三、市场同类与替代方案
 
-### 13.1 知识库关联
+> **信息快照：2026-10-21。** 决策模型仍处于快速迭代期，模型 ID、权重许可证、榜单版本和接入渠道都会变化，采购或上线前应以当天的官方模型卡为准。
+
+这一节只把满足下面至少两项的产品放进主表：
+
+1. 输入是共享 `state` 加一组类型化问题；
+2. 输出被约束为 Choice / Boolean / Score 等有界结构；
+3. 返回可供阈值判断的概率、分布或有序分数；
+4. 模型不靠自由文本生成完成判断。
+
+**不是一个模型只要“能做分类”就与 Jev 同构。** 普通聊天 LLM、Moderation API、传统分类器和规则引擎都能替代一部分业务功能，但接口语义、概率来源和失败方式完全不同。
+
+### 13.1 同构度怎么分
+
+| 层级 | 定义 | 代表 |
+|---|---|---|
+| **原生同构** | 类型化问题 + 原生概率 + 不以生成文本作为主输出 | Jev、Microsoft-Decision-1、OpenAI Decisions、Perplexity Decider |
+| **开源近同构** | 权重可自部署，保留类型化决策和概率接口，但模态、协议或许可证有差异 | Decision 3.0、StartLux-Decision、Intern-Decision、Kev、Laya |
+| **接口兼容** | 复用 System One / Jev SDK 调用方式，但内部实现和概率校准需自行验证 | StartLux、Kev、Decision 3.0 等 |
+| **功能替代** | 只覆盖某个子能力，例如结构化输出、固定标签分类、意图抽取或确定性规则 | Anthropic / Google 适配器、Xing4.0 Intent、传统分类器、OPA / DMN |
+
+### 13.2 闭源托管模型
+
+| 模型 / 产品 | 提供方式 | 输入与原语 | 概率 | 与 Jev 的关键差异 | 证据状态 |
+|---|---|---|---|---|---|
+| **Jev 1.14 / 1.13** | TypeSafe 托管 API、OpenRouter、AI Gateway | 文本 / JSON；Noul、Choice、Score；1.14 图片与 Box 为实验特性 | 原生分布；Choice / Score 另有 confidence | 当前基准标杆；闭源、不可本地部署、不给理由 | 官方文档 |
+| **Microsoft-Decision-1** | Microsoft Foundry | 文本 / JSON；`noul`、`choice`、`score` | 原生概率；Choice / Score 返回完整分布 | 协议与 System One 相似，但不能直接假定 SDK 兼容；不给解释；官方页未列 Box | [微软官方](https://learn.microsoft.com/en-us/azure/foundry/foundry-models/how-to/use-foundry-models-microsoft-decision) |
+| **OpenAI Decisions API** | OpenAI Decisions endpoint；AI SDK provider `openai.decisionModel('gpt-6-luna')` | Boolean、Choice、Score；AI SDK 可传图片 | 原生概率分布 | 走独立 Decisions endpoint，不接受 Responses API 的 reasoning 参数；模型 ID 以账号与官方页为准 | AI SDK 官方文档；OpenAI 官方页当前有访问限制 |
+| **Perplexity Decider** | Perplexity API；AI SDK provider `perplexity.decisionModel('pplx-decider-latest')` | Boolean、Choice、Score | 原生概率；Choice / Score 有分布与 confidence 元数据 | 托管闭源；公开接入资料少于 Jev / OpenAI，需自行压测和校准 | AI SDK 官方文档 |
+| **Anthropic / Google decision adapter** | AI SDK 统一接口包装结构化语言模型 | Boolean、Choice、Score | Boolean 是提示词估计的 `P(true)`；Choice / Score 无分布 | **不是原生决策模型**，本质是一次结构化 LLM 调用；不同答案之间的概率关系不可直接比较 | AI SDK 官方文档 |
+
+> 补充调研称 Microsoft-Decision-1 基于 Qwen3.5-9B 后训练；微软官方能力页没有把基座参数写成接口承诺，因此 `9B` 可以作为理解模型规模的线索，不能当作稳定的部署规格。
+
+AI SDK 的 `experimental_decide` 适合做**接入层抽象**，但不能抹平 provider 差异：
+
+```ts
+// 同一套调用形状，不等于同一套统计语义。
+const native = openai.decisionModel('gpt-6-luna');
+const compact = anthropic.decisionModel('claude-haiku-4-5-20251001');
+
+// native 可能给分布；compact 的 Choice / Score 通常没有 probabilities。
+```
+
+> **采购判断**：需要本地部署、权重控制或数据不出域时，闭源托管模型直接出局。需要稳定的概率阈值时，Anthropic / Google 的语言模型适配器只能算降级方案。
+
+### 13.3 开源与可本地部署模型
+
+| 模型 | 规模与许可 | 输入模态 | 接口 / 核心能力 | 适合场景 | 主要限制 |
+|---|---|---|---|---|---|
+| **Decision 3.0**（`vllm-sr/d3-*`） | 0.6B、0.8B、2B、4B、9B、27B；开放权重，逐模型卡确认许可 | 文本、图片、视频 | System One 接口；Choice / Score / Noul；部分模型支持 Box / Track | 需要视频、图片或自托管的通用决策层 | 免费公共 API 会记录请求，禁止发送敏感数据；小模型泛化边界明显 |
+| **StartLux-Decision** | 0.8B、2B、4B、9B、27B；v1 另有 35B-A3B；代码 Apache-2.0，**权重 CC BY-NC 4.0** | 文本、JSON、图片 | 兼容 `/v1/systemone`；Choice / Noul / Score；Instant 单次前向，AutoThink 低置信时生成短思考 | 需要 Jev 式协议、GGUF / MLX、本地私有化的非商业项目 | **权重不是商用开源许可**；AutoThink 并非严格“零生成”；商用需单独授权 |
+| **Intern-Decision** | 0.8B、2B、4B；官方仓库与 HF 权重集合 | 文本、可选图片 | 一次因果前向为多字段打分；Choice / Score / Noul | GUI Agent、屏幕理解、RPA、多模态路由 | 验证基准和温度主要由项目方报告；需确认目标权重许可 |
+| **Kev** | 0.8B、4B、9B、27B；Apache-2.0 | 文本 | API 兼容 System One，TypeSafe Python SDK 可直连；支持自训练和 MLX | 最看重可微调、可审计、本地部署和 Jev SDK 迁移的项目 | 小尺寸模型长上下文与知识题弱；27B 才接近较完整的长文档能力 |
+| **Laya** | 322M、421M；Apache-2.0 | 文本 | 非自回归编码器；Choice / Score / Noul；100+ 语言路由 | CPU、边缘设备、超低延迟分类与风险分级 | 上下文和推理能力远小于生成式模型；零样本跨领域准确率需实测 |
+| **Xing4.0-29B-Intent** | 29B 总参数、约 4B 激活；Apache-2.0 | 文本、对话 | Schema-guided 意图识别 + 槽位抽取；输出 `category + args` JSON | 智能座舱、智能空间、命令解析、业务参数抽取 | 更接近“结构化抽取模型”，不是原生概率决策模型；走 OpenAI 兼容生成接口 |
+| **Jev-Omni** | 社区开放权重；具体基座与许可见模型卡 | 用户清单称文本、图片、音频、视频；一手核验未完成 | 独立实现 Jev 式类型化概率接口，与 TypeSafe 无隶属关系 | 视频审核、设备质检、需要多模态输入的实验场景 | 基座、音频能力、许可证和基准尚需核对；不要把它当作 TypeSafe 官方 Jev |
+
+**几个容易被营销口径混淆的地方：**
+
+- “开放权重”不等于“OSI 开源”。StartLux 的**代码**是 Apache-2.0，但**模型权重**是 CC BY-NC 4.0。
+- “兼容 Jev API”只说明请求与响应可对接，不证明概率校准、延迟、上下文或准确率与 Jev 相同。
+- Decision 3.0、Intern-Decision、Kev 等项目的榜单分数经常是**项目方自测或特定排行榜快照**；Jev Decision Index 本身也在换版本，不能把不同版本的分数直接相减。
+- Xing4.0 Intent 扩展到了“选择题 + 填空题”，能力比 Jev 的 Choice 更宽，但输出不再天然是封闭选项上的概率分布。
+
+### 13.4 怎么选
+
+| 需求 | 建议起点 | 原因 |
+|---|---|---|
+| 最少运维、尽快验证 Jev 式决策 | Jev / Microsoft-Decision-1 / Perplexity Decider | 托管原生概率接口，接入成本最低 |
+| Azure 或 Microsoft Foundry 已落地 | Microsoft-Decision-1 | 身份、区域、配额和模型目录与现有云环境一致 |
+| 数据不出域、需要自托管 | Kev、StartLux Instant、Intern-Decision | 有公开权重和本地推理路径 |
+| 必须沿用 TypeSafe SDK | Kev、StartLux、Decision 3.0 | 都提供 System One 或 Jev 兼容调用面 |
+| CPU / 边缘设备 | Laya；更小档位的 Kev / StartLux | 参数量小，ONNX / GGUF / MLX 路径更现实 |
+| 图片、视频或屏幕理解 | Decision 3.0、Intern-Decision、Jev-Omni | 原生多模态输入或视觉决策能力更强 |
+| 意图识别后还要抽参数 | Xing4.0-29B-Intent | “选择题 + 填空题”比纯 Choice 更合适 |
+| 要统一多家 provider | AI SDK `experimental_decide` | 接口统一，但要自行处理概率能力和错误降级 |
+| 只需要固定标签分类 | 微调编码器 / 传统分类器 | 通常更便宜、更稳定，也更易解释 |
+| 已经有确定性规则 | OPA / DMN / 业务规则引擎 | 不需要让模型判断代码能精确计算的事 |
+
+### 13.5 接入前必须核对的七件事
+
+1. **输出语义**：Boolean 是 `P(true)`，还是模型选出的 `true` 标签？Choice / Score 是否真的有完整分布？
+2. **概率来源**：原生 logits / 概率，还是提示词估计、采样频率或模型自报 confidence？三者在 10.3 里不能混着算。
+3. **许可证**：权重、代码、训练数据、商用限制和再分发条款分别是什么？“GitHub 可下载”不等于可商用。
+4. **基准口径**：Jev Decision Index、JevBench、项目自测和第三方复现要分开记录，并固定榜单版本和评测日期。
+5. **自有校准集**：按 10.5 在自己的数据上跑 1000~2000 条标注样本，不能直接搬 Jev 的阈值。
+6. **尾延迟与成本**：记录 P50、P95、冷启动、队列等待、输入 token、媒体 token 和并发退化，不要只引用最佳中位数。
+7. **数据与版本**：托管 API 是否保存请求？模型 ID 是否浮动？上线时固定版本并在决策结果中记录 `model_observed`。
+
+### 13.6 与决策平面的关系
+
+第 6.5 节的 Decision Plane 不依赖某一个模型供应商。Jev、Microsoft-Decision-1、Decision 3.0、Kev 等都可以替换**模型层**，但不应改变下面这条边界：
+
+> **模型给概率，策略给动作，执行器负责强制约束。**
+
+如果更换模型，至少要重新跑四类回归：
+
+- 问题类型是否仍被支持；
+- 概率分布是否仍然完整；
+- 校准阈值是否仍然成立；
+- 工具闸门、上下文过滤和输出质检是否出现新的失败模式。
+
+### 13.7 待补核条目
+
+以下条目来自补充调研，但截至 2026-10-21 未定位到足够的一手资料，暂不作为选型主表结论：
+
+- **Liquid AI d1 系列（d1-3B / d1-omni-600M）**：用户清单称可本地免费运行并兼容图像输入，但在 Liquid AI 官方站点、公开模型索引和 OpenRouter 目录中未找到稳定入口。接入前需确认模型卡、权重、许可证和真实接口。
+- **Microsoft-Decision-1 的 OpenRouter 渠道**：微软官方页目前明确的是 Microsoft Foundry；OpenRouter 公共模型目录未检索到对应条目，暂按“仅 Foundry”处理。
+- **Jev-Omni 的音频、视频与基座信息**：公开模型卡能确认它是独立的 Jev 式决策模型，并非 TypeSafe 官方产品；Gemma 4 12B IT 基座和四模态能力仍需以模型卡原文复核。
+- **旧的 Decision 3.0 对比数字**：Decision 3.0 官方页当前给出 JDI 0.3.2 文本 66.26、视觉 71.26；不同榜单版本和不同 Jev 快照下的“64.7 vs 60.1”不能直接复用。
+
+---
+
+## 十四、延伸
+
+### 14.1 知识库关联
 
 - [[LLM_Model_Layer]] — Jev 可视为"模型层"里一个**新的模型类别**，而非又一个聊天模型
 - [[AI_Agent_Development_Framework]] — 决策模型可作为 agent 框架的前置判断层；系统化落地见 6.5
@@ -1834,7 +1950,7 @@ def shadow_eval(labelled_rows, client):
 - [[AI_Agent_Deep_Dive]] — 与 agent 的"规划/工具/记忆"三要素对照：Jev 补的是**判断**这一环（插槽见 6.4，决策平面见 6.5）
 - [[OpenClaw_Architecture_Design]] — 已有 TypeSafe 插件接入
 
-### 13.2 来源清单
+### 14.2 来源清单
 
 **🟢 一手 / 官方**
 
@@ -1850,9 +1966,27 @@ def shadow_eval(labelled_rows, client):
 - OpenRouter Jev 教程：https://openrouter.ai/docs/guides/community/jev-tutorial
 - Pydantic AI 的 TypeSafe 集成：https://pydantic.dev/docs/ai/models/typesafe/
 - LangChain 集成包（PyPI）：https://pypi.org/project/langchain-typesafe/
-- Vercel AI SDK 决策模型文档：https://ai-sdk.dev/docs/ai-sdk-core/decision-models
+- Vercel AI SDK Decisions 文档：https://ai-sdk.dev/docs/ai-sdk-core/decisions
 - a16z 投资公告：https://a16z.com/announcement/investing-in-typesafe-ai/
 - OpenClaw TypeSafe 插件：https://docs.openclaw.ai/plugins/typesafe
+
+**市场同类模型（2026-10-21 补充）**
+
+- Microsoft-Decision-1 官方文档：https://learn.microsoft.com/en-us/azure/foundry/foundry-models/how-to/use-foundry-models-microsoft-decision
+- AI SDK Decisions 统一接口与 provider 清单：https://ai-sdk.dev/docs/ai-sdk-core/decisions
+- OpenAI Decisions API（AI SDK 链接的官方入口，本次访问受限制）：https://developers.openai.com/api/docs/guides/decisions
+- Decision 3.0 项目页：https://decision.vllm-sr.ai/
+- Decision 3.0 API 文档：https://decision.vllm-sr.ai/docs
+- Decision 3.0 推理代码与 System One 运行时：https://github.com/vllm-project/semantic-router
+- StartLux-Decision 官方仓库与模型清单：https://github.com/StartLuxLabs/StartLux-Decision
+- StartLux-Decision 官方项目页：https://decision.startlux.com/
+- StartLux-Decision 技术报告：https://arxiv.org/abs/2610.17309
+- Intern-Decision 官方仓库：https://github.com/InternLM/Intern-Decision
+- Intern-Decision 技术报告：https://arxiv.org/abs/2610.22131
+- Kev 官方仓库：https://github.com/jaredpalmer/kev
+- Laya 官方仓库：https://github.com/NandhaKishorM/laya
+- Xing4.0-29B-Intent 官方仓库：https://github.com/XingChen-AGI/Xing4.0-29B-Intent
+- Jev-Omni 模型卡：https://huggingface.co/akhilaaa3/Jev-Omni
 
 **🟡 独立分析 / 学术**
 
