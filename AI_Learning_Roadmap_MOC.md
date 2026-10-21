@@ -1,7 +1,7 @@
 ---
 title: AI 学习路线（MOC）
 created: 2026-05-13
-updated: 2026-10-15
+updated: 2026-10-21
 tags: [MOC, AI, 学习路线, 知识地图]
 related: "[[README]], [[Obsidian_Claude_Code_Workflow]]"
 ---
@@ -33,7 +33,7 @@ related: "[[README]], [[Obsidian_Claude_Code_Workflow]]"
 - [[Agent_Context]] — 智能体上下文（Context Engineering / Context Mode / ACE / Context Hub）
 - [[Zeabur_Platform_Introduction]] — Zeabur AI DevOps 平台（AI 智能体部署 / AI Hub / Wonder Mesh BYOH / MCP 集成）
 - [[PaaS_Platform_Comparison]] — PaaS 托管平台对比（Vercel / Railway / Render / Fly.io / Heroku / Zeabur 六平台全维度对比）
-- [[TypeSafe_Jev_Introduction]] — TypeSafe Jev 决策模型（System One / 不生成文本 / Noul-Choice-Score 三原语 / 概率校准与已知陷阱）
+- [[TypeSafe_Jev_Introduction]] — TypeSafe Jev 决策模型（System One / Noul-Choice-Score 三原语 / 概率校准 / Agent 决策平面参考架构）
 ---
 
 ## 三、大模型核心架构 `LLM/`
@@ -121,7 +121,7 @@ AI 训练与推理的硬件基础：
   ↓
 模型: [[LLM_Model_Layer]] → 选择 LLM 提供商，掌握路由与成本管理
   ↓
-判断: [[TypeSafe_Jev_Introduction]] → 了解决策模型这一新模型类别（Jev：只判断，不生成）
+判断: [[TypeSafe_Jev_Introduction]] → 了解决策模型这一新模型类别，以及如何接入 Agent 决策平面
   ↓
 框架: [[AI_Agent_Development_Framework]] → 学习智能体开发工具
   ↓
