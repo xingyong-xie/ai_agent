@@ -1,7 +1,7 @@
 ---
 title: AI 学习路线（MOC）
 created: 2026-05-13
-updated: 2026-10-25
+updated: 2026-10-22
 tags: [MOC, AI, 学习路线, 知识地图]
 related: "[[README]], [[Obsidian_Claude_Code_Workflow]]"
 ---
@@ -46,6 +46,7 @@ related: "[[README]], [[Obsidian_Claude_Code_Workflow]]"
 - [[LLM_Transformer_Architecture]] — Transformer 完整架构（组件/改进/模型对比/训练推理）
   - [[Self_Attention_Algorithm]] — 自注意力算法深度解析（QKV/因果掩码/复杂度/代码实现/9种变体）
 - [[LLM_MoE_Architecture]] — MoE 稀疏激活架构（Router/Expert/共享专家/负载均衡/DeepSeek创新）
+- [[LLM_Quantization]] — 大模型量化（INT8/INT4/FP8 / GPTQ/AWQ/GGUF / KV Cache 量化 / 部署评测）
 
 ### 推理优化
 
@@ -124,7 +125,7 @@ AI 训练与推理的硬件基础：
   ↓
 进阶: [[LLM_MoE_Architecture]] → 了解最新 MoE 稀疏架构创新
   ↓
-优化: [[LLM_Quantization]] → 掌握量化压缩与推理加速，把模型部署到更小的硬件
+优化: [[LLM_Quantization]] → 掌握降低显存、带宽和推理成本的量化方法
   ↓
 模型: [[LLM_Model_Layer]] → 选择 LLM 提供商，掌握路由与成本管理
   ↓
