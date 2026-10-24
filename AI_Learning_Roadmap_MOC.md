@@ -1,7 +1,7 @@
 ---
 title: AI 学习路线（MOC）
 created: 2026-05-13
-updated: 2026-10-21
+updated: 2026-10-25
 tags: [MOC, AI, 学习路线, 知识地图]
 related: "[[README]], [[Obsidian_Claude_Code_Workflow]]"
 ---
@@ -45,6 +45,10 @@ related: "[[README]], [[Obsidian_Claude_Code_Workflow]]"
 - [[LLM_Transformer_Architecture]] — Transformer 完整架构（组件/改进/模型对比/训练推理）
   - [[Self_Attention_Algorithm]] — 自注意力算法深度解析（QKV/因果掩码/复杂度/代码实现/9种变体）
 - [[LLM_MoE_Architecture]] — MoE 稀疏激活架构（Router/Expert/共享专家/负载均衡/DeepSeek创新）
+
+### 推理优化
+
+- [[LLM_Quantization]] — 大模型量化（原理/PTQ-QAT/GPTQ/AWQ/SmoothQuant/GGUF/FP8/KV Cache 量化/选型）
 
 ### 模型层
 
@@ -119,6 +123,8 @@ AI 训练与推理的硬件基础：
   ↓
 进阶: [[LLM_MoE_Architecture]] → 了解最新 MoE 稀疏架构创新
   ↓
+优化: [[LLM_Quantization]] → 掌握量化压缩与推理加速，把模型部署到更小的硬件
+  ↓
 模型: [[LLM_Model_Layer]] → 选择 LLM 提供商，掌握路由与成本管理
   ↓
 判断: [[TypeSafe_Jev_Introduction]] → 了解决策模型这一新模型类别，以及如何接入 Agent 决策平面
@@ -162,6 +168,7 @@ AIGC: [[AIGC_Introduction]] → 了解 AI 内容生成全貌
 | [[LLM_Transformer_Architecture]] | `LLM/` | Transformer | `#AI/模型/Transformer` |
 | [[Self_Attention_Algorithm]] | `LLM/` | 自注意力 | `#AI/模型/注意力` |
 | [[LLM_MoE_Architecture]] | `LLM/` | MoE 架构 | `#AI/模型/MoE` |
+| [[LLM_Quantization]] | `LLM/` | 模型量化 | `#AI/模型/量化` |
 | [[LLM_Model_Layer]] | `LLM/` | 模型层 | `#AI/模型/提供商` |
 | [[TypeSafe_Jev_Introduction]] | `Framework/` | 决策模型 | `#AI/模型/决策模型` |
 | [[AutoGPT_Introduction]] | `Agent/` | AutoGPT | `#AI/智能体/AutoGPT` |

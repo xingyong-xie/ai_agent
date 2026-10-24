@@ -472,7 +472,7 @@ GPU 0          GPU 1          GPU 2          GPU 3
 | 方案 | 说明 |
 |------|------|
 | **Expert 卸载** | 将不活跃 Expert 放 CPU/磁盘，按需加载 |
-| **量化** | FP8/INT4/INT8 量化减少显存 |
+| **量化** | FP8/INT4/INT8 量化减少显存，详见 [[LLM_Quantization]] |
 | **Expert 并行** | 多 GPU 分担 Expert 存储 |
 | **FasterTransformer/vLLM** | 优化推理引擎 |
 
