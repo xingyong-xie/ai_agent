@@ -1,5 +1,7 @@
 .claude/
 Work/
+# 环境变量 / 密钥
+.env
 # Obsidian
 .obsidian/
 
