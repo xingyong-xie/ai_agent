@@ -30,6 +30,7 @@ related: "[[README]], [[Obsidian_Claude_Code_Workflow]]"
 - [[Agent_Skills_introduce]] — 智能体技能标准（agentskills.io / SKILL.md 格式）
 - [[Superpowers_Skill_Introduction]] — Superpowers 技能框架（TDD / 子智能体驱动开发 / 8+ 编程智能体兼容）
 - [[Agent_Tool_Layer]] — 智能体工具层（Function Calling / 工具定义 / LangChain 工具开发 / 安全权限）
+  - [[DeepSeek_Search_API]] — DeepSeek 网页搜索与抓取 API（Search / Fetch / 搜索语法 / 计费限速 / Agent 与 RAG 集成）
 - [[Agent_Context]] — 智能体上下文（Context Engineering / Context Mode / ACE / Context Hub）
 - [[Zeabur_Platform_Introduction]] — Zeabur AI DevOps 平台（AI 智能体部署 / AI Hub / Wonder Mesh BYOH / MCP 集成）
 - [[PaaS_Platform_Comparison]] — PaaS 托管平台对比（Vercel / Railway / Render / Fly.io / Heroku / Zeabur 六平台全维度对比）
@@ -133,6 +134,8 @@ AI 训练与推理的硬件基础：
   ↓
 工具: [[Agent_Tool_Layer]] + [[Agent_Context]] → 掌握工具调用与上下文管理
   ↓
+检索: [[DeepSeek_Search_API]] → 为 Agent / RAG 接入实时网页搜索与抓取
+  ↓
 协议: [[Agent_MCP_introduce]] + [[Agent_Skills_introduce]] → 掌握工具/技能集成标准
   ↓
 平台: [[AutoGPT_Introduction]] / [[OpenClaw_Architecture_Design]] → 了解主流智能体平台
@@ -161,6 +164,7 @@ AIGC: [[AIGC_Introduction]] → 了解 AI 内容生成全貌
 | [[Agent_MCP_introduce]] | `Framework/` | MCP 协议 | `#AI/协议` |
 | [[Agent_Skills_introduce]] | `Framework/` | 智能体技能 | `#AI/技能` |
 | [[Agent_Tool_Layer]] | `Framework/` | 工具层 | `#AI/工具层` |
+| [[DeepSeek_Search_API]] | `Framework/` | 网页搜索与抓取 | `#AI/DeepSeek/搜索` |
 | [[Agent_Context]] | `Framework/` | 智能体上下文 | `#AI/上下文` |
 | [[Zeabur_Platform_Introduction]] | `Framework/` | Zeabur 平台 | `#云平台/Zeabur` |
 | [[PaaS_Platform_Comparison]] | `Framework/` | PaaS 对比 | `#云平台/PaaS` |
