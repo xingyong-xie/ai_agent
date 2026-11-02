@@ -1,7 +1,7 @@
 ---
 title: AI 学习路线（MOC）
 created: 2026-05-13
-updated: 2026-10-22
+updated: 2026-11-02
 tags: [MOC, AI, 学习路线, 知识地图]
 related: "[[README]], [[Obsidian_Claude_Code_Workflow]]"
 ---
@@ -26,6 +26,7 @@ related: "[[README]], [[Obsidian_Claude_Code_Workflow]]"
 智能体开发的框架支撑与开放标准：
 
 - [[AI_Agent_Development_Framework]] — 开发框架总览（LangChain / LlamaIndex / AutoGen / CrewAI / Deer-Flow）
+- [[LangChain_LangGraph_Guide]] — LangChain / LangGraph 实战指南（ReAct / Plan & Execute / ToT / Self-Reflection 的实现映射与成熟度）
 - [[Agent_MCP_introduce]] — 模型上下文协议（MCP 原理 / 工具集成 / 生态）
 - [[Agent_Skills_introduce]] — 智能体技能标准（agentskills.io / SKILL.md 格式）
 - [[Superpowers_Skill_Introduction]] — Superpowers 技能框架（TDD / 子智能体驱动开发 / 8+ 编程智能体兼容）
@@ -162,6 +163,7 @@ AIGC: [[AIGC_Introduction]] → 了解 AI 内容生成全貌
 |------|------|------|------|
 | [[README]] | `/` | AI 智能体综述 | `#AI/智能体` |
 | [[AI_Agent_Development_Framework]] | `Framework/` | 开发框架 | `#AI/框架` |
+| [[LangChain_LangGraph_Guide]] | `Framework/` | LangChain/LangGraph | `#AI/框架/LangChain` |
 | [[Agent_MCP_introduce]] | `Framework/` | MCP 协议 | `#AI/协议` |
 | [[Agent_Skills_introduce]] | `Framework/` | 智能体技能 | `#AI/技能` |
 | [[Agent_Tool_Layer]] | `Framework/` | 工具层 | `#AI/工具层` |

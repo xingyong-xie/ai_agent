@@ -42,6 +42,8 @@ AI智能体（最终产品）
 
 ## 三、LangChain 详解
 
+> 本篇只做框架概览。LangChain v1 的 agent / middleware 体系、LangGraph 状态图，以及 ReAct / Plan & Execute / ToT / Self-Reflection 的具体实现与成熟度，见 [[LangChain_LangGraph_Guide]]。
+
 LangChain 是目前最流行的 AI 应用开发框架，提供以下核心能力：
 
 | 模块 | 功能 |
