@@ -104,15 +104,15 @@ Level 4: 长期自主运行
 
 ## 三、主流 Agent 框架对比
 
-| 框架 | 定位 | 特点 |
-|------|------|------|
-| **Claude Code** | 开发者内建 Agent | 深度集成终端，代码优先，MCP 生态 |
-| **LangChain / LangGraph** | 通用 Agent 框架 | 图状工作流，多 Agent 编排，生态最成熟 |
-| **AutoGen (Microsoft)** | 多 Agent 对话框架 | 专注于 Agent 间的对话协作 |
-| **CrewAI** | 多角色 Agent | 像组建团队一样配置 Agents |
-| **Semantic Kernel** | 企业级 .NET | 微软生态，Azure 集成 |
-| **OpenAI Agents SDK** | 轻量 Agent | Assistants API + Function Calling |
-| **Coze / Dify** | 低代码平台 | 拖拽式构建 Agent 工作流 |
+| 框架                        | 定位           | 特点                                |
+| ------------------------- | ------------ | --------------------------------- |
+| **Claude Code**           | 开发者内建 Agent  | 深度集成终端，代码优先，MCP 生态                |
+| **LangChain / LangGraph** | 通用 Agent 框架  | 图状工作流，多 Agent 编排，生态最成熟            |
+| **AutoGen (Microsoft)**   | 多 Agent 对话框架 | 专注于 Agent 间的对话协作                  |
+| **CrewAI**                | 多角色 Agent    | 像组建团队一样配置 Agents                  |
+| **Semantic Kernel**       | 企业级 .NET     | 微软生态，Azure 集成                     |
+| **OpenAI Agents SDK**     | 轻量 Agent     | Assistants API + Function Calling |
+| **Coze / Dify**           | 低代码平台        | 拖拽式构建 Agent 工作流                   |
 
 > 详见 [[AI_Agent_Development_Framework]]
 
